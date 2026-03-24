@@ -1,105 +1,85 @@
 @import "tailwindcss";
 
-/* Tailwind v4 Configuration.
-  Design tokens that generate utility classes (colors, fonts, shadows, etc.)
-  are defined here using their specific namespaces.
-*/
+/* Tailwind v4 Configuration. */
 @theme {
-  /* Colors */
-  --color-background: hsl(35 25% 96%);
-  --color-foreground: hsl(25 30% 15%);
-  --color-card: hsl(40 40% 98%);
-  --color-card-foreground: hsl(25 30% 15%);
-  --color-popover: hsl(40 40% 98%);
-  --color-popover-foreground: hsl(25 30% 15%);
-  --color-primary: hsl(25 75% 45%);
-  --color-primary-foreground: hsl(40 40% 98%);
-  --color-primary-glow: hsl(30 80% 55%);
-  --color-secondary: hsl(15 65% 35%);
-  --color-secondary-foreground: hsl(40 40% 98%);
-  --color-muted: hsl(35 20% 88%);
-  --color-muted-foreground: hsl(25 15% 45%);
-  --color-accent: hsl(35 85% 65%);
-  --color-accent-foreground: hsl(25 30% 15%);
-  --color-destructive: hsl(0 84.2% 60.2%);
-  --color-destructive-foreground: hsl(0 0% 100%);
-  --color-border: hsl(35 25% 85%);
-  --color-input: hsl(35 25% 85%);
-  --color-ring: hsl(25 75% 45%);
+  /* Colors - Default Dark Mode Theme */
+  --color-background: hsl(240 10% 4%);
+  --color-foreground: hsl(0 0% 98%);
+  
+  --color-card: hsl(240 10% 6%);
+  --color-card-foreground: hsl(0 0% 98%);
+  
+  --color-popover: hsl(240 10% 6%);
+  --color-popover-foreground: hsl(0 0% 98%);
+
+  /* MAIN BRAND COLOR - Electric Blue */
+  --color-primary: #3b82f6;
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-primary-glow: #60a5fa;
+
+  --color-secondary: hsl(240 10% 12%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+
+  --color-muted: hsl(240 10% 12%);
+  --color-muted-foreground: hsl(240 5% 65%);
+
+  --color-accent: hsl(240 10% 12%);
+  --color-accent-foreground: hsl(0 0% 98%);
+
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(240 10% 15%);
+  --color-input: hsl(240 10% 15%);
+  --color-ring: #3b82f6;
 
   /* Radius */
-  --radius-DEFAULT: 1rem; /* Generates .rounded */
-  --radius-lg: 1rem;     /* Generates .rounded-lg */
-  --radius-md: calc(1rem - 4px);
-  --radius-sm: calc(1rem - 8px);
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
 
   /* Shadows */
-  --shadow-soft: 0 4px 20px -2px hsl(25 75% 45% / 0.12);
-  --shadow-glow: 0 8px 32px -4px hsl(25 75% 45% / 0.3);
-  --shadow-card: 0 2px 12px -2px hsl(25 30% 15% / 0.08);
+  --shadow-soft: 0 4px 20px -2px rgba(59, 130, 246, 0.15);
+  --shadow-glow: 0 0 20px 0 rgba(59, 130, 246, 0.4);
+  --shadow-card: 0 2px 12px -2px rgba(0, 0, 0, 0.5);
 
   /* Fonts */
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-caveat: 'Caveat', cursive;
-  --font-playfair: 'Playfair Display', serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 @layer base {
-  /* Regular CSS variables that DON'T need to generate utility classes
-    (like complex gradients or full transition properties) can be defined in :root.
-  */
   :root {
-    --gradient-primary: linear-gradient(135deg, hsl(25 75% 45%), hsl(35 85% 65%));
-    --gradient-accent: linear-gradient(135deg, hsl(15 65% 35%), hsl(25 75% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(35 25% 96%), hsl(40 35% 92%));
+    --gradient-primary: linear-gradient(135deg, #3b82f6, #60a5fa);
+    --gradient-accent: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    --gradient-hero: linear-gradient(to bottom right, hsl(240 10% 2%), hsl(240 10% 6%));
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Dark mode overrides for the theme variables.
-  */
+  /* Support the .dark class injected by theme-provider, but we already set the defaults above. */
   .dark {
-    --color-background: hsl(25 25% 10%);
-    --color-foreground: hsl(35 20% 90%);
-    --color-card: hsl(25 20% 14%);
-    --color-card-foreground: hsl(35 20% 90%);
-    --color-popover: hsl(25 20% 14%);
-    --color-popover-foreground: hsl(35 20% 90%);
-    --color-primary: hsl(25 75% 45%);
-    --color-primary-foreground: hsl(40 40% 98%);
-    --color-primary-glow: hsl(30 80% 55%);
-    --color-secondary: hsl(15 65% 35%);
-    --color-secondary-foreground: hsl(40 40% 98%);
-    --color-muted: hsl(25 15% 20%);
-    --color-muted-foreground: hsl(35 15% 60%);
-    --color-accent: hsl(35 85% 65%);
-    --color-accent-foreground: hsl(25 30% 15%);
-    --color-destructive: hsl(0 84.2% 60.2%);
-    --color-destructive-foreground: hsl(0 0% 100%);
-    --color-border: hsl(25 20% 22%);
-    --color-input: hsl(25 20% 22%);
-    --color-ring: hsl(25 75% 45%);
-
-    --shadow-soft: 0 4px 20px -2px hsl(25 75% 45% / 0.25);
-    --shadow-glow: 0 8px 32px -4px hsl(25 75% 45% / 0.5);
-    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.4);
+    --color-background: hsl(240 10% 4%);
+    --color-foreground: hsl(0 0% 98%);
   }
 }
 
 @layer base {
-  /* Global base styles.
-  */
   * {
     border-color: hsl(var(--color-border));
   }
+
   body {
     background-color: hsl(var(--color-background));
     color: hsl(var(--color-foreground));
-    font-family: var(--font-sans); /* Use the theme variable */
+    font-family: var(--font-sans);
   }
-  h1, h2, h3, h4, h5, h6 {
-/* font-family: caveat,  */
-    font-family: var(--font-serif); /* Use the theme variable */
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.02em;
   }
 }

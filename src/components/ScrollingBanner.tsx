@@ -1,6 +1,6 @@
 const ScrollingBanner = ({ text, direction = "left" }: { text: string; direction?: "left" | "right" }) => {
     return (
-      <div className="w-full overflow-hidden bg-primary text-primary-foreground py-6 border-y-4 border-secondary">
+      <div className="w-full overflow-hidden bg-primary text-primary-foreground py-4 border-y-2 border-secondary">
         <div 
           className="flex whitespace-nowrap animate-scroll"
           style={{
@@ -8,7 +8,7 @@ const ScrollingBanner = ({ text, direction = "left" }: { text: string; direction
           }}
         >
           {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="text-2xl md:text-3xl font-caveat font-bold mx-8">
+            <span key={i} className="text-lg md:text-xl font-caveat font-bold mx-8">
               {text}
             </span>
           ))}

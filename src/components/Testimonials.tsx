@@ -1,70 +1,61 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { Lightbulb, PenTool, Code, Rocket } from "lucide-react";
 
-const testimonials = [
+const steps = [
   {
-    name: "Maria Rodriguez",
-    business: "The Daily Grind Café",
-    role: "Owner",
-    content: "Our online orders tripled within the first month! The website perfectly captures our café's vibe and makes ordering so easy for our customers.",
-    rating: 5,
+    number: "1",
+    icon: Lightbulb,
+    title: "Discovery",
+    description: "Understanding your business needs and goals.",
   },
   {
-    name: "James Chen",
-    business: "Bella Vista Restaurant",
-    role: "Manager",
-    content: "The reservation system has transformed our operations. We're fully booked most nights now, and customers love how professional we look online.",
-    rating: 5,
+    number: "2",
+    icon: PenTool,
+    title: "Design",
+    description: "Crafting custom AI solutions for your specific challenges.",
   },
   {
-    name: "Sarah Mitchell",
-    business: "Urban Cuts Barbershop",
-    role: "Owner",
-    content: "Best investment we've made! Bookings have doubled, and the online scheduling saves us hours every week. Our clients are impressed.",
-    rating: 5,
+    number: "3",
+    icon: Code,
+    title: "Development",
+    description: "Building robust, scalable AI implementations.",
+  },
+  {
+    number: "4",
+    icon: Rocket,
+    title: "Deployment",
+    description: "Seamless integration and continuous improvement.",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section id="about" className="py-32 bg-muted/20">
+    <section id="how-we-work" className="py-24 bg-background border-t border-border/10">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto mb-20 animate-fade-in">
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            Here's What Everyone's <span className="font-caveat text-primary">Excited</span> About
-          </h2>
-          <p className="text-2xl text-muted-foreground font-light">
-            Don't just take our word for it—hear from our happy clients
+        <div className="text-center max-w-4xl mx-auto mb-20">
+          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">How We Work</h2>
+          <h3 className="text-4xl md:text-5xl font-bold mb-6">Results That Matter</h3>
+          <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
+            We don't just implement AI - we deliver measurable outcomes that transform how your business operates.
+            Our methodical approach ensures that every AI project delivers tangible business value while minimizing implementation risks.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={testimonial.name}
-              className="border-2 border-border hover:border-primary shadow-card hover:shadow-glow transition-all duration-500 bg-card relative animate-scale-in hover:-translate-y-2"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <CardContent className="p-8">
-                <Quote className="w-12 h-12 text-primary/30 mb-6" />
-                
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                  ))}
-                </div>
-                
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
-                  "{testimonial.content}"
-                </p>
-                
-                <div className="border-t-2 border-border pt-6">
-                  <p className="font-bold text-xl mb-1">{testimonial.name}</p>
-                  <p className="text-muted-foreground mb-1">{testimonial.role}</p>
-                  <p className="text-primary font-semibold">{testimonial.business}</p>
-                </div>
-              </CardContent>
-            </Card>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative">
+          
+          {/* Connecting Line */}
+          <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-primary/10 via-primary/50 to-primary/10 z-0" />
+          
+          {steps.map((step) => (
+            <div key={step.number} className="relative z-10 flex flex-col items-center text-center group">
+              <div className="w-20 h-20 rounded-full bg-card border-2 border-primary/30 flex items-center justify-center mb-6 shadow-glow group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                <step.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 w-full h-full">
+                <div className="text-primary font-bold text-lg mb-2">Phase {step.number}</div>
+                <h4 className="text-2xl font-bold mb-3">{step.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
