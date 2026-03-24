@@ -42,7 +42,7 @@ const Specialties = () => {
         </div>
 
         {/* Minimalist Data Table */}
-        <div className="max-w-5xl overflow-hidden border border-border">
+        <div className="w-full overflow-hidden border border-border">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1.5fr] text-sm font-medium border-b border-border bg-muted/50 text-muted-foreground">
             <div className="p-4 md:p-6 hidden md:block">Module Profile</div>
             <div className="p-4 md:p-6 hidden md:block">Operational Parameters</div>
