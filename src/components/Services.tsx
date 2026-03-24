@@ -33,7 +33,7 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="py-24 bg-background border-t border-border">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         
         {/* Products Section */}
         <div id="products" className="mb-32">

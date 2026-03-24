@@ -24,7 +24,7 @@ const technologies = [
 const Technology = () => {
   return (
     <section id="technology" className="py-24 bg-background border-t border-border">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Advanced Infrastructure</h2>
           <p className="text-lg text-muted-foreground font-sans font-light">

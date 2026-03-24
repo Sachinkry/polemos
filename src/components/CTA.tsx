@@ -1,7 +1,7 @@
 const CTA = () => {
   return (
     <section id="contact" className="py-24 bg-background border-t border-border">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-16 item-start">
           
           {/* Left Text */}
