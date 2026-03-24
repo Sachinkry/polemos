@@ -2,84 +2,85 @@
 
 /* Tailwind v4 Configuration. */
 @theme {
-  /* Colors - Default Dark Mode Theme */
-  --color-background: hsl(240 10% 4%);
-  --color-foreground: hsl(0 0% 98%);
+  /* Premium Minimal Dark Mode Theme */
+  --color-background: #09090b; /* zinc-950 */
+  --color-foreground: #fafafa; /* zinc-50 */
   
-  --color-card: hsl(240 10% 6%);
-  --color-card-foreground: hsl(0 0% 98%);
+  --color-card: #09090b; 
+  --color-card-foreground: #fafafa;
   
-  --color-popover: hsl(240 10% 6%);
-  --color-popover-foreground: hsl(0 0% 98%);
+  --color-popover: #09090b;
+  --color-popover-foreground: #fafafa;
 
-  /* MAIN BRAND COLOR - Vibrant Violet */
-  --color-primary: #8b5cf6;
-  --color-primary-foreground: hsl(0 0% 100%);
-  --color-primary-glow: #a855f7;
+  /* MAIN BRAND COLOR - Soft Off-White / Muted Amber Accent */
+  --color-primary: #ededed;
+  --color-primary-foreground: #09090b;
+  --color-primary-glow: transparent;
 
-  --color-secondary: hsl(240 10% 12%);
-  --color-secondary-foreground: hsl(0 0% 98%);
+  --color-secondary: #27272a; /* zinc-800 */
+  --color-secondary-foreground: #fafafa;
 
-  --color-muted: hsl(240 10% 12%);
-  --color-muted-foreground: hsl(240 5% 65%);
+  --color-muted: #18181b; /* zinc-900 */
+  --color-muted-foreground: #a1a1aa; /* zinc-400 */
 
-  --color-accent: hsl(240 10% 12%);
-  --color-accent-foreground: hsl(0 0% 98%);
+  --color-accent: #27272a;
+  --color-accent-foreground: #fafafa;
 
-  --color-destructive: hsl(0 62.8% 30.6%);
-  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-destructive: #ef4444; 
+  --color-destructive-foreground: #fafafa;
 
-  --color-border: hsl(240 10% 15%);
-  --color-input: hsl(240 10% 15%);
-  --color-ring: #8b5cf6;
+  --color-border: #27272a; /* subtle zinc border */
+  --color-input: #27272a;
+  --color-ring: #ededed;
 
   /* Radius */
-  --radius-DEFAULT: 0.5rem;
-  --radius-lg: 0.5rem;
-  --radius-md: calc(0.5rem - 2px);
-  --radius-sm: calc(0.5rem - 4px);
+  --radius-DEFAULT: 0px; /* Sharp editorial cuts */
+  --radius-lg: 0px; 
+  --radius-md: 0px;
+  --radius-sm: 0px;
 
-  /* Shadows */
-  --shadow-soft: 0 4px 20px -2px rgba(139, 92, 246, 0.15);
-  --shadow-glow: 0 0 20px 0 rgba(168, 85, 247, 0.4);
-  --shadow-card: 0 2px 12px -2px rgba(0, 0, 0, 0.5);
+  /* Shadows - Minimalist */
+  --shadow-soft: none;
+  --shadow-glow: none;
+  --shadow-card: none;
 
   /* Fonts */
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --font-caveat: 'Caveat', cursive;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
 @layer base {
   :root {
-    --gradient-primary: linear-gradient(135deg, #8b5cf6, #c026d3);
-    --gradient-accent: linear-gradient(135deg, #4c1d95, #8b5cf6);
-    --gradient-hero: linear-gradient(to bottom right, hsl(240 10% 2%), hsl(240 10% 6%));
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --gradient-primary: none;
+    --gradient-accent: none;
+    --gradient-hero: none;
+    --transition-smooth: all 0.2s ease-in-out;
   }
 
-  /* Support the .dark class injected by theme-provider, but we already set the defaults above. */
   .dark {
-    --color-background: hsl(240 10% 4%);
-    --color-foreground: hsl(0 0% 98%);
+    --color-background: #09090b;
+    --color-foreground: #fafafa;
   }
 }
 
 @layer base {
   * {
-    border-color: hsl(var(--color-border));
+    border-color: var(--color-border);
   }
 
   body {
-    background-color: hsl(var(--color-background));
-    color: hsl(var(--color-foreground));
+    background-color: var(--color-background);
+    color: var(--color-foreground);
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Anthropic-style typography: Heavy use of Serif headers */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 }
