@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "./theme-provider";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { label: "Products", href: "#products" },
@@ -32,21 +34,39 @@ const Navigation = () => {
               {item.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="text-sm font-medium border border-border px-4 py-1.5 hover:bg-foreground hover:text-background transition-colors"
-          >
-            Contact
-          </a>
+          
+          <div className="flex flex-row items-center gap-4 border-l border-border pl-8">
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-muted-foreground hover:text-foreground transition-colors p-2"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
+            <a
+              href="#contact"
+              className="text-sm font-medium border border-border px-4 py-1.5 hover:bg-foreground hover:text-background transition-colors"
+            >
+              Contact
+            </a>
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 text-muted-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile Menu Button & Theme Switcher */}
+        <div className="flex items-center gap-4 md:hidden">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="text-muted-foreground p-2"
+          >
+            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+          <button
+            className="p-2 text-muted-foreground"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Dropdown */}

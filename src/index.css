@@ -2,36 +2,35 @@
 
 /* Tailwind v4 Configuration. */
 @theme {
-  /* Premium Minimal Dark Mode Theme */
-  --color-background: #09090b; /* zinc-950 */
-  --color-foreground: #fafafa; /* zinc-50 */
+  /* LIGHT MODE VARIABLES (Default) */
+  --color-background: #ffffff; 
+  --color-foreground: #09090b; /* zinc-950 */
   
-  --color-card: #09090b; 
-  --color-card-foreground: #fafafa;
+  --color-card: #ffffff; 
+  --color-card-foreground: #09090b;
   
-  --color-popover: #09090b;
-  --color-popover-foreground: #fafafa;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #09090b;
 
-  /* MAIN BRAND COLOR - Soft Off-White / Muted Amber Accent */
-  --color-primary: #ededed;
-  --color-primary-foreground: #09090b;
+  --color-primary: #09090b;
+  --color-primary-foreground: #fafafa;
   --color-primary-glow: transparent;
 
-  --color-secondary: #27272a; /* zinc-800 */
-  --color-secondary-foreground: #fafafa;
+  --color-secondary: #f4f4f5; /* zinc-100 */
+  --color-secondary-foreground: #09090b;
 
-  --color-muted: #18181b; /* zinc-900 */
-  --color-muted-foreground: #a1a1aa; /* zinc-400 */
+  --color-muted: #f4f4f5; 
+  --color-muted-foreground: #71717a; /* zinc-500 */
 
-  --color-accent: #27272a;
-  --color-accent-foreground: #fafafa;
+  --color-accent: #f4f4f5;
+  --color-accent-foreground: #09090b;
 
   --color-destructive: #ef4444; 
   --color-destructive-foreground: #fafafa;
 
-  --color-border: #27272a; /* subtle zinc border */
-  --color-input: #27272a;
-  --color-ring: #ededed;
+  --color-border: #e4e4e7; /* zinc-200 */
+  --color-input: #e4e4e7;
+  --color-ring: #09090b;
 
   /* Radius */
   --radius-DEFAULT: 0px; /* Sharp editorial cuts */
@@ -52,15 +51,39 @@
 
 @layer base {
   :root {
-    --gradient-primary: none;
-    --gradient-accent: none;
-    --gradient-hero: none;
     --transition-smooth: all 0.2s ease-in-out;
   }
 
+  /* DARK MODE OVERRIDES */
   .dark {
-    --color-background: #09090b;
-    --color-foreground: #fafafa;
+    --color-background: #09090b; /* zinc-950 */
+    --color-foreground: #fafafa; /* zinc-50 */
+    
+    --color-card: #09090b; 
+    --color-card-foreground: #fafafa;
+    
+    --color-popover: #09090b;
+    --color-popover-foreground: #fafafa;
+
+    --color-primary: #ededed;
+    --color-primary-foreground: #09090b;
+    --color-primary-glow: transparent;
+
+    --color-secondary: #27272a; /* zinc-800 */
+    --color-secondary-foreground: #fafafa;
+
+    --color-muted: #18181b; /* zinc-900 */
+    --color-muted-foreground: #a1a1aa; /* zinc-400 */
+
+    --color-accent: #27272a;
+    --color-accent-foreground: #fafafa;
+
+    --color-destructive: #ef4444; 
+    --color-destructive-foreground: #fafafa;
+
+    --color-border: #27272a; /* subtle zinc border */
+    --color-input: #27272a;
+    --color-ring: #ededed;
   }
 }
 
