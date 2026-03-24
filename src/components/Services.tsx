@@ -32,51 +32,65 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-background border-t border-border">
+    <section id="services" className="py-32 bg-background border-t border-border">
       <div className="container mx-auto px-6 max-w-6xl">
         
         {/* Products Section */}
-        <div id="products" className="mb-32">
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Flagship Innovations</h2>
-            <p className="text-lg text-muted-foreground font-sans font-light">
-              Proprietary platforms we’ve engineered to accelerate your AI adoption.
-            </p>
+        <div id="products" className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-40 relative">
+          <div className="lg:w-1/3">
+            <div className="sticky top-32">
+              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-6 block border-b border-border pb-4">
+                [ 01 ] Platforms
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-6">Flagship Innovations</h2>
+              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed">
+                Proprietary platforms we’ve engineered natively to accelerate your AI adoption and minimize technical overhead.
+              </p>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-px bg-border">
-            {products.map((product) => (
-              <div key={product.title} className="bg-background p-8 md:p-12 hover:bg-muted/50 transition-colors">
-                <span className="inline-block text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">
-                  {product.subtitle}
-                </span>
-                <h3 className="text-2xl font-serif text-foreground mb-4">{product.title}</h3>
-                <p className="text-muted-foreground font-sans font-light leading-relaxed">
-                  {product.description}
-                </p>
-              </div>
-            ))}
+          <div className="lg:w-2/3 pt-4 lg:pt-0">
+            <div className="grid md:grid-cols-2 gap-px bg-border">
+              {products.map((product) => (
+                <div key={product.title} className="bg-background p-8 md:p-12 hover:bg-muted/50 transition-colors h-full">
+                  <span className="inline-block text-xs font-mono text-muted-foreground uppercase tracking-wider mb-4 border border-border px-2 py-1">
+                    {product.subtitle}
+                  </span>
+                  <h3 className="text-2xl font-serif text-foreground mb-4">{product.title}</h3>
+                  <p className="text-muted-foreground font-sans font-light leading-relaxed">
+                    {product.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Services Section */}
-        <div>
-          <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-4">Core Competencies</h2>
-            <p className="text-lg text-muted-foreground font-sans font-light">
-              Bespoke consulting and engineering to fortify your competitive edge.
-            </p>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 relative">
+          <div className="lg:w-1/3">
+            <div className="sticky top-32">
+              <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-6 block border-b border-border pb-4">
+                [ 02 ] Competencies
+              </span>
+              <h2 className="text-3xl md:text-5xl font-serif text-foreground mb-6">Core Competencies</h2>
+              <p className="text-lg text-muted-foreground font-sans font-light leading-relaxed">
+                Bespoke consulting and intelligent engineering to fortify your competitive edge against market disruption.
+              </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-px bg-border">
-            {services.map((service) => (
-              <div key={service.title} className="bg-background p-8 md:p-12 hover:bg-muted/50 transition-colors">
-                <h3 className="text-xl font-serif text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground font-sans font-light leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+          <div className="lg:w-2/3 pt-4 lg:pt-0">
+            <div className="grid md:grid-cols-2 gap-px bg-border">
+              {services.map((service) => (
+                <div key={service.title} className="bg-background p-8 md:p-12 hover:bg-muted/50 transition-colors h-full">
+                  <h3 className="text-xl font-serif text-foreground mb-3">{service.title}</h3>
+                  <p className="text-muted-foreground font-sans font-light leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
