@@ -1,29 +1,29 @@
-import { Lightbulb, PenTool, Code, Rocket } from "lucide-react";
+import { Target, Microscope, Sliders, Zap } from "lucide-react";
 
 const steps = [
   {
-    number: "1",
-    icon: Lightbulb,
-    title: "Discovery",
-    description: "Understanding your business needs and goals.",
+    number: "01",
+    icon: Target,
+    title: "Evaluate",
+    description: "Deep dive into your operational bottlenecks to identify high-ROI AI opportunities.",
   },
   {
-    number: "2",
-    icon: PenTool,
-    title: "Design",
-    description: "Crafting custom AI solutions for your specific challenges.",
+    number: "02",
+    icon: Microscope,
+    title: "Architect",
+    description: "Design technical frameworks prioritizing data security, scalability, and seamless UI/UX.",
   },
   {
-    number: "3",
-    icon: Code,
-    title: "Development",
-    description: "Building robust, scalable AI implementations.",
+    number: "03",
+    icon: Sliders,
+    title: "Train",
+    description: "Fine-tune and rigidly test intelligent agents on your domain-specific proprietary data.",
   },
   {
-    number: "4",
-    icon: Rocket,
-    title: "Deployment",
-    description: "Seamless integration and continuous improvement.",
+    number: "04",
+    icon: Zap,
+    title: "Scale",
+    description: "Deploy solutions into production with continuous monitoring and iterative refinement.",
   },
 ];
 
@@ -32,11 +32,11 @@ const Testimonials = () => {
     <section id="how-we-work" className="py-24 bg-background border-t border-border/10">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">How We Work</h2>
-          <h3 className="text-4xl md:text-5xl font-bold mb-6">Results That Matter</h3>
+          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">Our Methodology</h2>
+          <h3 className="text-4xl md:text-5xl font-bold mb-6">Engineered for Impact</h3>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
-            We don't just implement AI - we deliver measurable outcomes that transform how your business operates.
-            Our methodical approach ensures that every AI project delivers tangible business value while minimizing implementation risks.
+            We abandon the hype cycle in favor of a rigorous, engineering-first approach. 
+            Every deployment is meticulously crafted to ensure security, accuracy, and clear business outcomes.
           </p>
         </div>
         

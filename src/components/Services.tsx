@@ -1,55 +1,45 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Box, BrainCircuit, Network, Cpu, LayoutTemplate, Video, Workflow } from "lucide-react";
+import { ArrowRight, Layers, Cpu, Compass, Activity, Database, Zap } from "lucide-react";
 
 const products = [
   {
-    icon: LayoutTemplate,
-    title: "Woodle",
-    subtitle: "Prompt to Website",
-    description: "Craft beautiful websites in minutes using just text prompts. Woodle leverages AI to transform your ideas into fully functional websites without coding.",
-    link: "woodleai.com",
-    tag: "AI Website Builder"
+    icon: Database,
+    title: "OmniGraph",
+    subtitle: "Enterprise Knowledge Engine",
+    description: "Unify your siloed company data into a dynamic knowledge graph that powers context-aware LLM agents across your entire organization seamlessly.",
+    link: "omnigraph.io",
+    tag: "Data Infrastructure"
   },
   {
-    icon: Video,
-    title: "RiotJet",
-    subtitle: "Tweet to Video",
-    description: "Transform your tweets into engaging videos for TikTok, Reels, and Shorts. Supercharge your social media content distribution with automated video creation.",
-    link: "riotjet.com",
-    tag: "Social Media Amplifier"
+    icon: Zap,
+    title: "NeuroTask",
+    subtitle: "Autonomous Operations",
+    description: "Deploy self-healing, intelligent agentic workflows that can autonomously handle tedious backend operations, data entry, and system monitoring.",
+    link: "neurotask.ai",
+    tag: "Workflow Automation"
   }
 ];
 
 const services = [
   {
-    icon: Box,
-    title: "Custom AI Products",
-    description: "We build effective AI products from scratch, tailored to solve your specific business challenges.",
+    icon: Compass,
+    title: "Strategic AI Roadmaps",
+    description: "We audit your existing technical debt and outline a phased, pragmatic blueprint for incorporating generative AI securely.",
   },
   {
-    icon: Network,
-    title: "Enterprise AI Integration",
-    description: "Seamlessly integrate advanced AI capabilities into your existing enterprise systems and workflows.",
+    icon: Layers,
+    title: "LLM Fine-Tuning & Deployment",
+    description: "Train foundational models securely on your proprietary data to ensure domain-specific accuracy and strict compliance.",
   },
   {
-    icon: BrainCircuit,
-    title: "AI Enablement",
-    description: "Transform your organization with the tools, training, and infrastructure needed to leverage AI effectively.",
-  },
-  {
-    icon: Workflow,
-    title: "AI-Powered Automation",
-    description: "Transform workflows with intelligent AI agents that learn, adapt, and execute complex processes.",
-  },
-  {
-    icon: Video,
-    title: "AI Video Marketing Solutions",
-    description: "Create personalized, engaging video content at scale with AI avatars, custom voices, and dynamic personalization.",
+    icon: Activity,
+    title: "Predictive Intelligence",
+    description: "Harness statistical modeling and machine learning to forecast trends, optimize supply chains, and mitigate risks proactively.",
   },
   {
     icon: Cpu,
-    title: "AI Strategy & Consulting",
-    description: "Strategic guidance on implementing cutting-edge AI solutions that deliver exceptional business value.",
+    title: "Agentic Systems Engineering",
+    description: "Construct multi-agent frameworks capable of advanced reasoning, tool selection, and robust task execution with minimal oversight.",
   }
 ];
 
@@ -61,9 +51,9 @@ const Services = () => {
         {/* Products Section */}
         <div id="products" className="mb-32">
           <div className="max-w-4xl mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Our AI Products</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Flagship Innovations</h2>
             <p className="text-xl text-muted-foreground font-light">
-              Innovative AI solutions we've built to solve real-world problems.
+              Proprietary platforms we’ve engineered to accelerate your AI adoption.
             </p>
           </div>
           
@@ -78,7 +68,7 @@ const Services = () => {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                       <product.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <span className="text-xs font-semibold py-1 px-3 rounded-full bg-secondary text-secondary-foreground">
+                    <span className="text-xs font-semibold py-1 px-3 rounded-full bg-secondary text-secondary-foreground border border-border">
                       {product.tag}
                     </span>
                   </div>
@@ -97,23 +87,23 @@ const Services = () => {
         {/* Services Section */}
         <div>
           <div className="max-w-4xl mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Our Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Core Competencies</h2>
             <p className="text-xl text-muted-foreground font-light">
-              AI solutions for enterprise-level product development and operational transformation.
+              Bespoke consulting and engineering to fortify your competitive edge.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
             {services.map((service) => (
               <Card 
                 key={service.title}
                 className="group border border-border/50 hover:border-primary/50 bg-card/30 backdrop-blur-sm transition-all duration-300"
               >
-                <CardContent className="p-6">
-                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
-                    <service.icon className="w-5 h-5 text-primary" />
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 rounded-lg bg-accent/30 border border-border/50 flex items-center justify-center mb-6">
+                    <service.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2">{service.title}</h3>
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>

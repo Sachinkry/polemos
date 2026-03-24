@@ -19,8 +19,8 @@ const Navigation = () => {
         
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight">
-            Polemos<span className="text-primary font-black">Labs</span>
+          <h1 className="text-lg md:text-xl font-mono font-bold uppercase tracking-[0.2em] text-foreground">
+            POLEMOS<span className="text-primary ml-2">LABS</span>
           </h1>
         </div>
 
