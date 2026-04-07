@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# Polemos Labs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Enterprise AI consultancy landing page built with React, TypeScript, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Checks
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm run build
+npm run lint
 ```
+
+## Contact Form
+
+The contact form posts to `/api/contact`, which is intended for a Vercel-style serverless deployment.
+During local Vite development, `vite.config.ts` serves the same endpoint so `npm run dev` can submit the form too.
+
+Set these environment variables in the deploy provider:
+
+```sh
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=
+RESEND_API_KEY=
+CONTACT_FROM_EMAIL="Polemos Labs <hello@polemos.in>"
+CONTACT_TO_EMAIL=hello@polemos.in
+```
+
+Telegram can be enabled before email. Receiving and forwarding `hello@polemos.in` can be set up separately, but form-to-email delivery through Resend still needs `polemos.in` verified as a sending domain. `CONTACT_TO_EMAIL` can be a comma-separated list if you want to send to both the domain inbox and a personal inbox.
+
+## Deployment
+
+Vercel is the recommended deployment target for the current codebase because the contact handler lives in `/api/contact.ts`.
+Cloudflare Pages can also work, but the handler should be moved/adapted to Cloudflare Pages Functions under `/functions`.

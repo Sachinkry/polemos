@@ -1,69 +1,79 @@
-const Footer = () => {
-  return (
-    <footer className="bg-background border-t border-border pt-24 pb-12">
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          
-          <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-xl font-mono font-bold uppercase tracking-[0.2em] text-foreground">
-              POLEMOS LABS
-            </h2>
-            <p className="text-muted-foreground font-sans font-light text-sm leading-relaxed max-w-sm">
-              We design and deploy autonomous AI frameworks that multiply your enterprise's capabilities without linearly scaling headcount.
-            </p>
-            <div className="pt-4 max-w-sm">
-              <h3 className="text-foreground font-serif text-lg mb-2">Our Guiding Principle</h3>
-              <p className="text-sm font-sans font-light text-muted-foreground leading-relaxed">
-                We engineer scalable intelligence. Moving beyond experimental chatbots to deliver hardened, production-ready systems that generate undeniable operational value.
-              </p>
-            </div>
+const footerLinks = [
+  { label: "Work", href: "#outcomes" },
+  { label: "Accelerators", href: "#products" },
+  { label: "Services", href: "#services" },
+  { label: "Process", href: "#process" },
+];
+
+const Footer = () => (
+  <footer className="border-t border-white/7 bg-canvas px-5 py-16 md:px-16">
+    <div className="mx-auto w-full max-w-[1220px]">
+      <div className="grid gap-12 md:grid-cols-[1fr_auto_auto]">
+
+        {/* Brand */}
+        <div className="space-y-4">
+          <div className="font-serif text-[1.1rem] font-semibold uppercase tracking-[0.1em] text-gold">
+            Polemos Labs.
           </div>
-          
-          <div>
-            <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-6">Navigation</h3>
-            <ul className="space-y-4">
-              {['Products', 'Services', 'Specialties', 'Methodology'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-foreground hover:text-muted-foreground text-sm font-sans font-light transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-6">Contact</h3>
-            <ul className="space-y-4 text-sm font-sans font-light text-muted-foreground">
-              <li>
-                <a href="mailto:hello@polemoslabs.com" className="text-foreground hover:text-muted-foreground transition-colors">hello@polemoslabs.com</a>
-              </li>
-              <li>
-                <a href="mailto:partners@polemoslabs.com" className="text-foreground hover:text-muted-foreground transition-colors">partners@polemoslabs.com</a>
-              </li>
-              <li className="pt-4">
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-foreground"></span>
-                  Engineering grid nominally active
-                </span>
-              </li>
-            </ul>
-          </div>
-          
-        </div>
-        
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
-            © {new Date().getFullYear()} Polemos Labs. All rights reserved.
+          <p className="max-w-[260px] text-[0.8rem] leading-[1.7] text-warm-muted">
+            Enterprise AI implementation for operational workflows, private data, agents, and secure model deployment.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-xs font-mono text-muted-foreground uppercase tracking-widest hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="text-xs font-mono text-muted-foreground uppercase tracking-widest hover:text-foreground transition-colors">Terms</a>
-          </div>
+        </div>
+
+        {/* Nav */}
+        <div>
+          <p className="mb-5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-warm-muted">
+            Navigation
+          </p>
+          <ul className="space-y-3">
+            {footerLinks.map(({ label, href }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  className="text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <p className="mb-5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-warm-muted">
+            Contact
+          </p>
+          <ul className="space-y-3">
+            <li>
+              <a
+                href="mailto:hello@polemos.in"
+                className="text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
+              >
+                hello@polemos.in
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      {/* Bottom bar */}
+      <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/7 pt-8 md:flex-row md:items-center">
+        <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted">
+          © {new Date().getFullYear()} Polemos Labs. All rights reserved.
+        </p>
+        <div className="flex gap-6">
+          <a href="#" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+            Privacy
+          </a>
+          <a href="#" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+            Terms
+          </a>
         </div>
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;
