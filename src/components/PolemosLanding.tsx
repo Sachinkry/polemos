@@ -174,8 +174,8 @@ const PolemosLanding = () => {
         </div>
 
         <div className="relative z-10 max-w-[900px]">
-          <p className="animate-[polemos-fade-up_0.8s_0.2s_forwards] font-mono text-[0.7rem] tracking-[0.15em] text-warm-muted opacity-0">
-            PLB — 01 / ENTERPRISE AI IMPLEMENTATION
+          <p className="animate-[polemos-fade-up_0.8s_0.2s_forwards]  font-mono text-[0.7rem] tracking-[0.15em] text-gold opacity-0">
+            ENTERPRISE AI 
           </p>
           <h1 className="mt-8 animate-[polemos-fade-up_0.9s_0.4s_forwards] font-serif text-[clamp(3rem,5vw,5.5rem)] font-semibold leading-[1.05] tracking-[-0.02em] opacity-0">
             Turn messy workflows into AI systems your team can actually <em className="font-serif italic text-gold">use.</em>
