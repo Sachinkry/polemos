@@ -610,6 +610,9 @@ const PolemosLanding = () => {
                     required
                     className="min-h-[120px] resize-y border border-white/10 bg-surface-raised px-4 py-3 text-[0.85rem] text-warm-text outline-none transition-colors placeholder:text-warm-muted focus:border-gold/50"
                   />
+                  <p className="text-[0.75rem] leading-[1.6] text-warm-muted">
+                    Please don't include passwords, API keys, private customer data, or regulated data.
+                  </p>
                 </div>
                 <button
                   type="submit"

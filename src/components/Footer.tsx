@@ -1,8 +1,8 @@
 const footerLinks = [
-  { label: "Work", href: "#outcomes" },
-  { label: "Accelerators", href: "#products" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
+  { label: "Work", href: "/#outcomes" },
+  { label: "Accelerators", href: "/#products" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
 ];
 
 const Footer = () => (
@@ -64,10 +64,10 @@ const Footer = () => (
           © {new Date().getFullYear()} Polemos Labs. All rights reserved.
         </p>
         <div className="flex gap-6">
-          <a href="#" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+          <a href="/privacy" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
             Privacy
           </a>
-          <a href="#" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+          <a href="/terms" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
             Terms
           </a>
         </div>
