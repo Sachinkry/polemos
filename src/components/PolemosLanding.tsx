@@ -31,7 +31,7 @@ const RichText = ({ segments }: { segments: TextSegment[] }) => (
   </>
 );
 
-const SHELL_CLASS = "mx-auto w-full max-w-[1220px]";
+const SHELL_CLASS = "mx-auto w-full max-w-[960px] xl:max-w-[1040px] 2xl:max-w-[1120px]";
 type ContactFormStatus = "idle" | "submitting" | "success" | "error";
 
 const FREE_EMAIL_DOMAINS = new Set([
