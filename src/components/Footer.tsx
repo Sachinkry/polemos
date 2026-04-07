@@ -1,3 +1,6 @@
+import { Mail } from "lucide-react";
+import XLogo from "./XLogo";
+
 const footerLinks = [
   { label: "Work", href: "/#outcomes" },
   { label: "Accelerators", href: "/#products" },
@@ -48,9 +51,21 @@ const Footer = () => (
             <li>
               <a
                 href="mailto:hello@polemos.in"
-                className="text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
+                className="flex items-center gap-2 text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
               >
+                <Mail className="h-3.5 w-3.5 text-gold" />
                 hello@polemos.in
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/polemos_labs"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
+              >
+                <XLogo className="h-3.5 w-3.5 text-gold" />
+                X / @polemos_labs
               </a>
             </li>
           </ul>

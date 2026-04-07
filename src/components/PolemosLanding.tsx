@@ -2,6 +2,7 @@ import { useState, useEffect, type FormEvent } from "react";
 import { Menu, X, Mail } from "lucide-react";
 import Footer from "./Footer";
 import SectionLabel from "./SectionLabel";
+import XLogo from "./XLogo";
 import { useCustomCursor } from "@/hooks/useCustomCursor";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import {
@@ -641,24 +642,40 @@ const PolemosLanding = () => {
                   Contact
                 </p>
                 <div className="space-y-7">
-                  {[{ label: "Email", email: "hello@polemos.in" }].map(({ label, email }) => (
-                    <div key={email} className="flex items-start gap-4">
-                      <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center border border-gold/30 text-gold">
-                        <Mail className="h-3.5 w-3.5" />
-                      </div>
-                      <div>
-                        <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted">
-                          {label}
-                        </p>
-                        <a
-                          href={`mailto:${email}`}
-                          className="mt-1 block text-[0.88rem] text-warm-text transition-colors hover:text-gold"
-                        >
-                          {email}
-                        </a>
-                      </div>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center border border-gold/30 text-gold">
+                      <Mail className="h-3.5 w-3.5" />
                     </div>
-                  ))}
+                    <div>
+                      <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted">
+                        Email
+                      </p>
+                      <a
+                        href="mailto:hello@polemos.in"
+                        className="mt-1 block text-[0.88rem] text-warm-text transition-colors hover:text-gold"
+                      >
+                        hello@polemos.in
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center border border-gold/30 text-gold">
+                      <XLogo className="h-3.5 w-3.5" />
+                    </div>
+                    <div>
+                      <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted">
+                        Social
+                      </p>
+                      <a
+                        href="https://x.com/polemos_labs"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 block text-[0.88rem] text-warm-text transition-colors hover:text-gold"
+                      >
+                        @polemos_labs
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
