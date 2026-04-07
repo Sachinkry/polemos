@@ -13,7 +13,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <div className="font-serif text-[1.1rem] font-semibold uppercase tracking-[0.1em] text-gold">
-            Polemos Labs.
+            POLEMOS LABS
           </div>
           <p className="max-w-[260px] text-[0.8rem] leading-[1.7] text-warm-muted">
             Enterprise AI implementation for operational workflows, private data, agents, and secure model deployment.

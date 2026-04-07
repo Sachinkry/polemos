@@ -1,0 +1,16 @@
+<svg width="420" height="96" viewBox="0 0 420 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Polemos Labs</title>
+  <desc id="desc">Polemos Labs compass logo lockup.</desc>
+  <g transform="translate(4 8)" stroke="#C8A255">
+    <circle cx="40" cy="40" r="36" stroke-width="1.4"/>
+    <circle cx="40" cy="40" r="23" stroke-width="0.8" opacity="0.6"/>
+    <circle cx="40" cy="40" r="9" stroke-width="0.8" opacity="0.45"/>
+    <path d="M40 4V76M4 40H76" stroke-width="0.8" opacity="0.45"/>
+    <path d="M15 15L65 65M65 15L15 65" stroke-width="0.8" opacity="0.22"/>
+    <path d="M40 14L49 40L40 66L31 40L40 14Z" fill="#C8A255" stroke-width="0"/>
+    <path d="M40 28L44.5 40L40 52L35.5 40L40 28Z" fill="#0A0A0B" stroke-width="0"/>
+  </g>
+  <g transform="translate(104 24)">
+    <text x="0" y="34" fill="#E8E6E0" font-family="Cormorant Garamond, Georgia, serif" font-size="38" font-weight="600" letter-spacing="1.5">Polemos Labs</text>
+  </g>
+</svg>

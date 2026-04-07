@@ -34,6 +34,33 @@ const RichText = ({ segments }: { segments: TextSegment[] }) => (
 const SHELL_CLASS = "mx-auto w-full max-w-[1220px]";
 type ContactFormStatus = "idle" | "submitting" | "success" | "error";
 
+const FREE_EMAIL_DOMAINS = new Set([
+  "gmail.com",
+  "googlemail.com",
+  "yahoo.com",
+  "ymail.com",
+  "outlook.com",
+  "hotmail.com",
+  "live.com",
+  "icloud.com",
+  "me.com",
+  "mac.com",
+  "aol.com",
+  "proton.me",
+  "protonmail.com",
+  "pm.me",
+  "zoho.com",
+  "mail.com",
+  "gmx.com",
+  "gmx.net",
+  "hey.com",
+]);
+
+const isCompanyEmail = (email: string) => {
+  const domain = email.split("@").at(1)?.toLowerCase();
+  return Boolean(domain && !FREE_EMAIL_DOMAINS.has(domain));
+};
+
 const PolemosLanding = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState<ContactFormStatus>("idle");
@@ -43,11 +70,19 @@ const PolemosLanding = () => {
 
   const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setFormStatus("submitting");
     setFormMessage("");
 
     const form = event.currentTarget;
     const payload = Object.fromEntries(new FormData(form).entries());
+    const email = String(payload.email ?? "").trim();
+
+    if (!isCompanyEmail(email)) {
+      setFormStatus("error");
+      setFormMessage("Please use your company email address.");
+      return;
+    }
+
+    setFormStatus("submitting");
 
     try {
       const response = await fetch("/api/contact", {
@@ -57,15 +92,20 @@ const PolemosLanding = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Contact request failed");
+        const responseBody = (await response.json().catch(() => ({}))) as { error?: string };
+        throw new Error(responseBody.error ?? "Contact request failed");
       }
 
       form.reset();
       setFormStatus("success");
       setFormMessage("Message sent. We'll review it and get back to you.");
-    } catch {
+    } catch (error) {
       setFormStatus("error");
-      setFormMessage("Something went wrong. Please email hello@polemos.in directly.");
+      setFormMessage(
+        error instanceof Error && error.message !== "Failed to fetch"
+          ? error.message
+          : "Something went wrong. Please email hello@polemos.in directly.",
+      );
     }
   };
 
@@ -88,7 +128,7 @@ const PolemosLanding = () => {
           href="#"
           className="font-serif text-[1.3rem] font-semibold tracking-[0.05em] text-gold"
         >
-          POLEMOS LABS.
+          POLEMOS LABS
         </a>
 
         <div className="hidden items-center gap-10 lg:flex">
@@ -504,24 +544,27 @@ const PolemosLanding = () => {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="flex flex-col gap-2">
                     <label className="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-warm-muted">
-                      Name
+                      Name <span className="text-gold" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="text"
                       name="name"
                       placeholder="John Smith"
+                      maxLength={120}
                       required
                       className="border border-white/10 bg-surface-raised px-4 py-3 text-[0.85rem] text-warm-text outline-none transition-colors placeholder:text-warm-muted focus:border-gold/50"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-warm-muted">
-                      Work Email
+                      Work Email <span className="text-gold" aria-hidden="true">*</span>
                     </label>
                     <input
                       type="email"
                       name="email"
                       placeholder="you@company.com"
+                      maxLength={254}
+                      title="Please use your company email address."
                       required
                       className="border border-white/10 bg-surface-raised px-4 py-3 text-[0.85rem] text-warm-text outline-none transition-colors placeholder:text-warm-muted focus:border-gold/50"
                     />
@@ -536,6 +579,7 @@ const PolemosLanding = () => {
                       type="text"
                       name="organization"
                       placeholder="Company Name"
+                      maxLength={160}
                       className="border border-white/10 bg-surface-raised px-4 py-3 text-[0.85rem] text-warm-text outline-none transition-colors placeholder:text-warm-muted focus:border-gold/50"
                     />
                   </div>
@@ -547,17 +591,22 @@ const PolemosLanding = () => {
                       type="text"
                       name="timeline"
                       placeholder="e.g. Q3 2026"
+                      maxLength={120}
                       className="border border-white/10 bg-surface-raised px-4 py-3 text-[0.85rem] text-warm-text outline-none transition-colors placeholder:text-warm-muted focus:border-gold/50"
                     />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-warm-muted">
-                    What should stop being manual?
+                    What should stop being manual?{" "}
+                    <span className="text-gold" aria-hidden="true">
+                      *
+                    </span>
                   </label>
                   <textarea
                     name="message"
                     placeholder="Example: We review 2,000 vendor documents a month and need extraction, validation, approval routing, and audit logs."
+                    maxLength={3000}
                     required
                     className="min-h-[120px] resize-y border border-white/10 bg-surface-raised px-4 py-3 text-[0.85rem] text-warm-text outline-none transition-colors placeholder:text-warm-muted focus:border-gold/50"
                   />

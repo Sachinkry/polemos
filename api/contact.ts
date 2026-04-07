@@ -19,6 +19,28 @@ type ApiResponse = {
   end: () => void;
 };
 
+const FREE_EMAIL_DOMAINS = new Set([
+  "gmail.com",
+  "googlemail.com",
+  "yahoo.com",
+  "ymail.com",
+  "outlook.com",
+  "hotmail.com",
+  "live.com",
+  "icloud.com",
+  "me.com",
+  "mac.com",
+  "aol.com",
+  "proton.me",
+  "protonmail.com",
+  "pm.me",
+  "zoho.com",
+  "mail.com",
+  "gmx.com",
+  "gmx.net",
+  "hey.com",
+]);
+
 const getString = (value: unknown) => (typeof value === "string" ? value.trim() : "");
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
@@ -54,6 +76,15 @@ const getEmailRecipients = (value: string) =>
     .split(",")
     .map((email) => email.trim())
     .filter(Boolean);
+
+const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+const isCompanyEmail = (email: string) => {
+  const domain = email.split("@").at(1)?.toLowerCase();
+  return Boolean(domain && !FREE_EMAIL_DOMAINS.has(domain));
+};
+
+const isWithinLength = (value: string, maxLength: number) => value.length <= maxLength;
 
 const buildPlainTextMessage = ({
   name,
@@ -175,8 +206,24 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   const timeline = payload.timeline ?? "";
   const message = payload.message ?? "";
 
-  if (!name || !email || !message || !email.includes("@")) {
+  if (!name || !email || !message || !isValidEmail(email)) {
     res.status(400).json({ error: "Name, valid email, and message are required" });
+    return;
+  }
+
+  if (!isCompanyEmail(email)) {
+    res.status(400).json({ error: "Please use a company email address" });
+    return;
+  }
+
+  if (
+    !isWithinLength(name, 120) ||
+    !isWithinLength(email, 254) ||
+    !isWithinLength(organization, 160) ||
+    !isWithinLength(timeline, 120) ||
+    !isWithinLength(message, 3000)
+  ) {
+    res.status(400).json({ error: "Submitted fields are too long" });
     return;
   }
 

@@ -1,0 +1,27 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Polemos Labs</title>
+  <desc id="desc">Polemos Labs social preview image for enterprise AI workflow automation.</desc>
+  <rect width="1200" height="630" fill="#0A0A0B"/>
+  <path d="M0 0H1200V630H0V0Z" fill="url(#glow)"/>
+  <g transform="translate(92 126)" stroke="#C8A255">
+    <circle cx="190" cy="190" r="168" stroke-width="5"/>
+    <circle cx="190" cy="190" r="108" stroke-width="3" opacity="0.58"/>
+    <circle cx="190" cy="190" r="45" stroke-width="3" opacity="0.4"/>
+    <path d="M190 22V358M22 190H358" stroke-width="3" opacity="0.45"/>
+    <path d="M72 72L308 308M308 72L72 308" stroke-width="2.5" opacity="0.2"/>
+    <path d="M190 64L232 190L190 316L148 190L190 64Z" fill="#C8A255" stroke-width="0"/>
+    <path d="M190 134L212 190L190 246L168 190L190 134Z" fill="#0A0A0B" stroke-width="0"/>
+  </g>
+  <g transform="translate(522 192)">
+    <text x="0" y="82" fill="#E8E6E0" font-family="Cormorant Garamond, Georgia, serif" font-size="92" font-weight="600" letter-spacing="1.5">Polemos Labs</text>
+    <text x="4" y="146" fill="#C8A255" font-family="DM Mono, monospace" font-size="22" letter-spacing="7">DEPLOYED INTELLIGENCE</text>
+    <path d="M4 188H520" stroke="#2D2A24" stroke-width="2"/>
+    <text x="4" y="244" fill="#AAA397" font-family="Instrument Sans, Arial, sans-serif" font-size="28" font-weight="500">Enterprise AI workflow automation.</text>
+  </g>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(840 260) rotate(125) scale(620 720)">
+      <stop stop-color="#C8A255" stop-opacity="0.12"/>
+      <stop offset="0.55" stop-color="#0A0A0B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

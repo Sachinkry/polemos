@@ -1,0 +1,17 @@
+<svg width="480" height="118" viewBox="0 0 480 118" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Polemos Labs</title>
+  <desc id="desc">Polemos Labs compass logo with deployed intelligence subtext.</desc>
+  <g transform="translate(4 10)" stroke="#C8A255">
+    <circle cx="44" cy="44" r="40" stroke-width="1.5"/>
+    <circle cx="44" cy="44" r="26" stroke-width="0.85" opacity="0.6"/>
+    <circle cx="44" cy="44" r="11" stroke-width="0.85" opacity="0.45"/>
+    <path d="M44 4V84M4 44H84" stroke-width="0.85" opacity="0.45"/>
+    <path d="M16 16L72 72M72 16L16 72" stroke-width="0.85" opacity="0.22"/>
+    <path d="M44 15L54 44L44 73L34 44L44 15Z" fill="#C8A255" stroke-width="0"/>
+    <path d="M44 31L49 44L44 57L39 44L44 31Z" fill="#0A0A0B" stroke-width="0"/>
+  </g>
+  <g transform="translate(112 26)">
+    <text x="0" y="36" fill="#E8E6E0" font-family="Cormorant Garamond, Georgia, serif" font-size="38" font-weight="600" letter-spacing="1.3">Polemos Labs</text>
+    <text x="2" y="66" fill="#C8A255" font-family="DM Mono, monospace" font-size="9.5" letter-spacing="3.3">DEPLOYED INTELLIGENCE</text>
+  </g>
+</svg>

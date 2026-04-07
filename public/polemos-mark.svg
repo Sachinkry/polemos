@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Polemos Labs mark</title>
+  <desc id="desc">A gold compass and deployed intelligence mark for Polemos Labs.</desc>
+  <g stroke="#C8A255">
+    <circle cx="256" cy="256" r="212" stroke-width="12"/>
+    <circle cx="256" cy="256" r="136" stroke-width="7" opacity="0.6"/>
+    <circle cx="256" cy="256" r="54" stroke-width="7" opacity="0.45"/>
+    <path d="M256 44V468M44 256H468" stroke-width="7" opacity="0.45"/>
+    <path d="M108 108L404 404M404 108L108 404" stroke-width="6" opacity="0.22"/>
+    <path d="M256 96L311 256L256 416L201 256L256 96Z" fill="#C8A255" stroke-width="0"/>
+    <path d="M256 184L284 256L256 328L228 256L256 184Z" fill="#0A0A0B" stroke-width="0"/>
+  </g>
+</svg>

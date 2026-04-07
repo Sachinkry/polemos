@@ -1,0 +1,13 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Polemos Labs social avatar</title>
+  <desc id="desc">Circle-safe social avatar with the Polemos Labs gold compass mark.</desc>
+  <rect width="1024" height="1024" fill="#0A0A0B"/>
+  <circle cx="512" cy="512" r="390" fill="#111113"/>
+  <g stroke="#C8A255">
+    <circle cx="512" cy="512" r="300" stroke-width="18"/>
+    <circle cx="512" cy="512" r="188" stroke-width="10" opacity="0.62"/>
+    <path d="M512 212V812M212 512H812" stroke-width="10" opacity="0.5"/>
+    <path d="M512 276L590 512L512 748L434 512L512 276Z" fill="#C8A255" stroke-width="0"/>
+    <path d="M512 404L552 512L512 620L472 512L512 404Z" fill="#111113" stroke-width="0"/>
+  </g>
+</svg>

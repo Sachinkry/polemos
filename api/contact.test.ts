@@ -220,6 +220,50 @@ describe("contact form submission", () => {
     assert.equal(fetchCalls.length, 0);
   });
 
+  test("rejects personal email domains", async () => {
+    process.env.TELEGRAM_BOT_TOKEN = "test-bot-token";
+    process.env.TELEGRAM_CHAT_ID = "test-chat-id";
+
+    const fetchCalls: Array<{ url: string; init?: RequestInit }> = [];
+    globalThis.fetch = async (url, init) => {
+      fetchCalls.push({ url: String(url), init });
+      return new Response(JSON.stringify({ ok: true }), { status: 200 });
+    };
+
+    const response = await submitContact({
+      name: "Sachin",
+      email: "sachin@gmail.com",
+      organization: "Polemos",
+      message: "Automate documents.",
+    });
+
+    assert.equal(response.statusCode, 400);
+    assert.deepEqual(response.body, { error: "Please use a company email address" });
+    assert.equal(fetchCalls.length, 0);
+  });
+
+  test("rejects submitted fields above maximum lengths", async () => {
+    process.env.TELEGRAM_BOT_TOKEN = "test-bot-token";
+    process.env.TELEGRAM_CHAT_ID = "test-chat-id";
+
+    const fetchCalls: Array<{ url: string; init?: RequestInit }> = [];
+    globalThis.fetch = async (url, init) => {
+      fetchCalls.push({ url: String(url), init });
+      return new Response(JSON.stringify({ ok: true }), { status: 200 });
+    };
+
+    const response = await submitContact({
+      name: "Sachin",
+      email: "sachin@example.com",
+      organization: "Polemos",
+      message: "x".repeat(3001),
+    });
+
+    assert.equal(response.statusCode, 400);
+    assert.deepEqual(response.body, { error: "Submitted fields are too long" });
+    assert.equal(fetchCalls.length, 0);
+  });
+
   test("returns a provider error when every configured provider rejects the request", async () => {
     process.env.TELEGRAM_BOT_TOKEN = "test-bot-token";
     process.env.TELEGRAM_CHAT_ID = "test-chat-id";

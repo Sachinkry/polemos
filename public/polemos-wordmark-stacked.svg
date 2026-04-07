@@ -1,0 +1,7 @@
+<svg width="720" height="360" viewBox="0 0 720 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Polemos Labs stacked wordmark</title>
+  <desc id="desc">A text-only stacked Polemos Labs wordmark.</desc>
+  <rect width="720" height="360" fill="transparent"/>
+  <text x="360" y="150" text-anchor="middle" fill="#C8A255" font-family="Cormorant Garamond, Georgia, serif" font-size="104" font-weight="600" letter-spacing="10">POLEMOS</text>
+  <text x="360" y="248" text-anchor="middle" fill="#C8A255" font-family="Cormorant Garamond, Georgia, serif" font-size="88" font-weight="600" letter-spacing="18">LABS</text>
+</svg>
