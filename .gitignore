@@ -25,3 +25,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local-only design backups & dev artifacts
+public/legacy-logos/
+public/avatar-preview.html
+public/logo-preview.html
+repomix-output.xml

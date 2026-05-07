@@ -19,7 +19,7 @@ const Footer = () => (
             POLEMOS LABS
           </div>
           <p className="max-w-[260px] text-[0.8rem] leading-[1.7] text-warm-muted">
-            Enterprise AI implementation for operational workflows, private data, agents, and secure model deployment.
+            AI command systems for operational workflows, private data, agents, and secure model deployment.
           </p>
         </div>
 

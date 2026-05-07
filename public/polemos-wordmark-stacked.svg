@@ -1,7 +1,7 @@
-<svg width="720" height="360" viewBox="0 0 720 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Polemos Labs stacked wordmark</title>
-  <desc id="desc">A text-only stacked Polemos Labs wordmark.</desc>
-  <rect width="720" height="360" fill="transparent"/>
-  <text x="360" y="150" text-anchor="middle" fill="#C8A255" font-family="Cormorant Garamond, Georgia, serif" font-size="104" font-weight="600" letter-spacing="10">POLEMOS</text>
-  <text x="360" y="248" text-anchor="middle" fill="#C8A255" font-family="Cormorant Garamond, Georgia, serif" font-size="88" font-weight="600" letter-spacing="18">LABS</text>
+<svg width="720" height="360" viewBox="0 0 720 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Polemos Labs">
+  <g transform="translate(312 30) scale(0.96)">
+    <path d="M 50 8 L 58 42 L 92 50 L 58 58 L 50 92 L 42 58 L 8 50 L 42 42 Z" fill="#e8d9c7"/>
+  </g>
+  <text x="360" y="240" text-anchor="middle" fill="#e8d9c7" font-family="Bricolage Grotesque, Instrument Sans, system-ui, sans-serif" font-size="64" font-weight="700" letter-spacing="3">POLEMOS</text>
+  <text x="360" y="298" text-anchor="middle" fill="#e8d9c7" font-family="Bricolage Grotesque, Instrument Sans, system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="10">LABS</text>
 </svg>

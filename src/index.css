@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 /* Tailwind v4 Configuration. */
@@ -33,30 +33,32 @@
   --color-input: #e4e4e7;
   --color-ring: #09090b;
 
-  /* Polemos Brand Palette — permanent dark, warm tone */
-  --color-gold: #c8a255;
-  --color-gold-foreground: #0a0a0b;
-  --color-canvas: #0a0a0b;
-  --color-surface: #111113;
-  --color-surface-raised: #18181c;
-  --color-warm-text: #e8e6e0;
-  --color-warm-muted: #aaa397;
-  --color-reject: #c0392b;
+  /* Polemos Brand Palette — neutral parchment on blackened steel */
+  --color-gold: #e8d9c7;
+  --color-gold-foreground: #0a0808;
+  --color-canvas: #08080a;
+  --color-surface: #111114;
+  --color-surface-raised: #1a1a1f;
+  --color-warm-text: #f4eee5;
+  --color-warm-muted: #a8a29a;
+  --color-reject: #ef4444;
 
-  /* Radius */
-  --radius-DEFAULT: 0px; /* Sharp editorial cuts */
-  --radius-lg: 0px;
-  --radius-md: 0px;
-  --radius-sm: 0px;
+  /* Radius — iOS-style soft corners */
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-md: 0.875rem;
+  --radius-sm: 0.625rem;
 
   /* Shadows - Minimalist */
   --shadow-soft: none;
   --shadow-glow: none;
   --shadow-card: none;
 
-  /* Fonts */
+  /* Fonts — single grotesque system, no serif */
   --font-sans: "Instrument Sans", system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+  /* --font-serif retained as alias so existing rules pick up the display face. */
+  --font-serif: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
   --font-mono: "DM Mono", monospace;
 }
 
@@ -103,9 +105,10 @@
     border-color: var(--color-border);
   }
 
+  html,
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--color-canvas);
+    color: var(--color-warm-text);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -113,17 +116,103 @@
 
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   ::placeholder {
     opacity: 0.72;
   }
 
-  /* Anthropic-style typography: Heavy use of Serif headers */
+  /* Display headings — Bricolage Grotesque, no italic axis available */
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  /* Bricolage has no true italic — drop fake-slant on accent <em> inside headings */
+  h1 em, h2 em, h3 em, h4 em, h5 em, h6 em,
+  .t-display em, .t-h2 em, .t-h3 em, .t-h4 em {
+    font-style: normal;
+  }
+}
+
+/* ── Typography scale ──
+   Use these instead of ad-hoc text-[0.x rem] / tracking-[0.x em] clusters.
+   Sans = body & UI labels. Serif = headings. Mono = code/console only. */
+@layer components {
+  .t-display {
+    font-family: var(--font-display);
+    font-size: clamp(3.6rem, 7vw, 7.8rem);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+
+  .t-h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .t-h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  .t-h4 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+
+  .t-body {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: 0;
+  }
+
+  .t-body-sm {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    letter-spacing: 0;
+  }
+
+  /* Eyebrow labels (section labels, tag pills, small captions).
+     Sans + uppercase + open tracking — replaces former mono clusters. */
+  .t-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
     font-weight: 500;
-    letter-spacing: -0.01em;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .t-label {
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Reserve mono for code-like contexts (live console, trace output). */
+  .t-mono {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
   }
 }
 
@@ -136,10 +225,28 @@
 
 .polemos-grid {
   background-image:
-    linear-gradient(rgba(200, 162, 85, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200, 162, 85, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at 20% 80%, black 0%, transparent 60%);
+    linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgba(232, 217, 199, 0.06) calc(100% - 1px)),
+    linear-gradient(180deg, transparent 0, transparent calc(100% - 1px), rgba(255, 247, 237, 0.025) calc(100% - 1px)),
+    repeating-linear-gradient(115deg, rgba(232, 217, 199, 0.035) 0 1px, transparent 1px 190px);
+  background-position:
+    center,
+    center,
+    0 0;
+  background-size:
+    132px 100%,
+    100% 126px,
+    260px 260px;
+  mask-image: linear-gradient(90deg, black 0%, black 64%, transparent 96%);
+}
+
+.polemos-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 0%, rgba(232, 217, 199, 0.05) 48%, transparent 49%, transparent 100%),
+    radial-gradient(circle at 22% 48%, rgba(232, 217, 199, 0.13), transparent 32%);
+  opacity: 0.7;
 }
 
 .polemos-noise {
@@ -155,7 +262,7 @@
   height: 7px;
   width: 7px;
   border-radius: 9999px;
-  background: #c8a255;
+  background: #e8d9c7;
   pointer-events: none;
   opacity: 0;
   transform: translate(-50%, -50%);
@@ -171,9 +278,8 @@
   height: 38px;
   width: 38px;
   border-radius: 9999px;
-  /* brighter border + subtle glow so it reads on both light and dark areas */
-  border: 1.5px solid rgba(200, 162, 85, 0.75);
-  box-shadow: 0 0 12px rgba(200, 162, 85, 0.15);
+  border: 1.5px solid rgba(232, 217, 199, 0.58);
+  box-shadow: 0 0 18px rgba(232, 217, 199, 0.18);
   pointer-events: none;
   opacity: 0;
   transform: translate(-50%, -50%);
@@ -184,8 +290,8 @@
 .polemos-cursor-ring.is-interactive {
   width: 58px;
   height: 58px;
-  border-color: #c8a255;
-  box-shadow: 0 0 20px rgba(200, 162, 85, 0.25);
+  border-color: #e8d9c7;
+  box-shadow: 0 0 26px rgba(232, 217, 199, 0.24);
 }
 
 .polemos-reveal {
@@ -212,8 +318,157 @@
   animation: polemos-ticker 40s linear infinite;
 }
 
+.text-gradient-neutral {
+  background-image: linear-gradient(180deg, #fff7ed 0%, #c8bab1 48%, #e8d9c7 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.box-gradient-neutral {
+  background-image: linear-gradient(180deg, rgba(34, 30, 38, 0.92) 0%, rgba(20, 18, 24, 0.92) 100%);
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+}
+
+.box-gradient-neutral:hover {
+  background-image: linear-gradient(180deg, rgba(46, 40, 50, 0.94) 0%, rgba(26, 22, 30, 0.94) 100%);
+}
+
+.glass-tile {
+  border-radius: 1.75rem;
+  overflow: hidden;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.polemos-command-panel {
+  background:
+    linear-gradient(135deg, rgba(232, 217, 199, 0.14) 0%, transparent 44%),
+    linear-gradient(180deg, rgba(255, 247, 237, 0.055) 0%, rgba(255, 247, 237, 0.015) 100%);
+  border-radius: 1.75rem;
+  overflow: hidden;
+}
+
+.polemos-command-panel::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: 1px solid rgba(255, 247, 237, 0.05);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.polemos-radar-sweep {
+  background: conic-gradient(from 230deg, transparent 0deg, rgba(232, 217, 199, 0.32) 30deg, transparent 76deg);
+  animation: polemos-radar 10s linear infinite;
+}
+
+.polemos-hero-aurora {
+  background:
+    radial-gradient(circle at 68% 44%, rgba(232, 217, 199, 0.16) 0%, transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(255, 247, 237, 0.065) 0%, transparent 24%),
+    linear-gradient(115deg, transparent 0%, rgba(232, 217, 199, 0.055) 48%, transparent 74%);
+  opacity: 0.9;
+}
+
+.polemos-command-stage {
+  perspective: 1100px;
+}
+
+.polemos-command-stage::before {
+  content: "";
+  position: absolute;
+  inset: 7% 2% 6%;
+  background:
+    linear-gradient(rgba(255, 247, 237, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 217, 199, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at 54% 50%, black 0%, transparent 72%);
+  transform: rotateX(62deg) rotateZ(-8deg);
+  transform-origin: center;
+}
+
+.polemos-left-radar {
+  transform-style: preserve-3d;
+  animation: polemos-left-radar-float 9s ease-in-out infinite;
+  opacity: 0.88;
+}
+
+.polemos-orbit-map {
+  transform-style: preserve-3d;
+  animation: polemos-float 8s ease-in-out infinite;
+}
+
+.polemos-orbit {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 247, 237, 0.09);
+  border-radius: 9999px;
+  box-shadow: inset 0 0 48px rgba(232, 217, 199, 0.05);
+}
+
+.polemos-orbit::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  height: 8px;
+  width: 8px;
+  border-radius: 9999px;
+  background: #e8d9c7;
+  box-shadow: 0 0 28px rgba(232, 217, 199, 0.9);
+}
+
+.polemos-orbit-one {
+  animation: polemos-orbit-spin 18s linear infinite;
+}
+
+.polemos-orbit-two {
+  inset: 13%;
+  border-style: dashed;
+  animation: polemos-orbit-spin 26s linear infinite reverse;
+}
+
+.polemos-orbit-three {
+  inset: 28%;
+  opacity: 0.72;
+  animation: polemos-orbit-spin 14s linear infinite;
+}
+
+.polemos-core-pulse {
+  animation: polemos-core-breathe 2.6s ease-in-out infinite;
+}
+
+.polemos-map-node {
+  animation: polemos-node-pulse 2.8s ease-in-out infinite;
+}
+
+.polemos-console-panel {
+  background:
+    linear-gradient(180deg, rgba(28, 24, 32, 0.7) 0%, rgba(14, 12, 18, 0.6) 100%),
+    radial-gradient(circle at top left, rgba(232, 217, 199, 0.14), transparent 42%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 28px 90px rgba(0, 0, 0, 0.44);
+  border-radius: 1.75rem;
+  backdrop-filter: blur(28px) saturate(150%);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+}
+
+.polemos-console-panel {
+  animation: polemos-panel-drift 7s ease-in-out infinite;
+}
+
+.polemos-progress {
+  animation: polemos-progress-pulse 2.4s ease-in-out infinite;
+}
+
 .polemos-cta-glow {
-  background: radial-gradient(ellipse at center, rgba(200, 162, 85, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(232, 217, 199, 0.12) 0%, transparent 70%);
 }
 
 @keyframes polemos-fade-up {
@@ -238,6 +493,98 @@
   }
 }
 
+@keyframes polemos-radar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes polemos-left-radar-float {
+  0%,
+  100% {
+    transform: rotateX(62deg) rotateZ(-12deg) translateY(0);
+  }
+
+  50% {
+    transform: rotateX(62deg) rotateZ(-12deg) translateY(-14px);
+  }
+}
+
+@keyframes polemos-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-18deg) translateY(0);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotateX(58deg) rotateZ(-18deg) translateY(-16px);
+  }
+}
+
+@keyframes polemos-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes polemos-core-breathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes polemos-node-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.88);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes polemos-panel-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes polemos-progress-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(232, 217, 199, 0.35);
+    opacity: 0.72;
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(232, 217, 199, 0.82);
+    opacity: 1;
+  }
+}
+
 @keyframes scroll-left {
   from {
     transform: translateX(0);
@@ -256,4 +603,221 @@
   to {
     transform: translateX(0);
   }
+}
+
+/* ── Hero command lattice ── */
+.polemos-lattice-ring {
+  transform-origin: center;
+  fill: none;
+}
+
+.polemos-ring-spin-a {
+  animation: polemos-orbit-spin 90s linear infinite;
+}
+
+.polemos-ring-spin-b {
+  animation: polemos-orbit-spin 60s linear infinite reverse;
+}
+
+.polemos-ring-spin-c {
+  animation: polemos-orbit-spin 38s linear infinite;
+}
+
+.polemos-ring-spin-d {
+  animation: polemos-orbit-spin 22s linear infinite reverse;
+}
+
+.polemos-data-line {
+  stroke-dasharray: 3 11;
+  animation: polemos-data-flow 3.6s linear infinite;
+}
+
+.polemos-data-line.is-slow { animation-duration: 5.4s; }
+.polemos-data-line.is-fast { animation-duration: 2.4s; }
+.polemos-data-line.is-reverse { animation-direction: reverse; }
+
+@keyframes polemos-data-flow {
+  to {
+    stroke-dashoffset: -56;
+  }
+}
+
+.polemos-mesh-node {
+  transform-origin: center;
+  animation: polemos-mesh-pulse 3.4s ease-in-out infinite;
+}
+
+@keyframes polemos-mesh-pulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.45);
+  }
+}
+
+.polemos-scan-beam {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(232, 217, 199, 0.05) 49%,
+    rgba(232, 217, 199, 0.12) 50%,
+    rgba(232, 217, 199, 0.05) 51%,
+    transparent 62%
+  );
+  background-size: 240% 240%;
+  animation: polemos-scan 14s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes polemos-scan {
+  0% { background-position: 100% 100%; }
+  100% { background-position: -40% -40%; }
+}
+
+.polemos-crosshair {
+  stroke: rgba(232, 217, 199, 0.35);
+  stroke-width: 0.6;
+  fill: none;
+}
+
+/* ── Hero aurora — drifting gradient mesh, very slow */
+.polemos-aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  contain: paint;
+  filter: blur(38px) saturate(160%);
+  transform: translateZ(0);
+}
+
+.polemos-aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: screen;
+}
+
+/* Warm parchment — top left */
+.polemos-aurora-blob.b1 {
+  width: 55vw;
+  height: 55vw;
+  top: -20%;
+  left: -15%;
+  background: radial-gradient(circle, rgba(255, 220, 170, 0.55) 0%, rgba(232, 180, 130, 0.18) 38%, transparent 62%);
+  animation: polemos-aurora-1 32s ease-in-out infinite;
+}
+
+/* Cool slate-violet — top right (counterpoint) */
+.polemos-aurora-blob.b2 {
+  width: 50vw;
+  height: 50vw;
+  top: -22%;
+  right: -18%;
+  background: radial-gradient(circle, rgba(120, 130, 200, 0.50) 0%, rgba(80, 90, 160, 0.18) 40%, transparent 65%);
+  animation: polemos-aurora-2 26s ease-in-out infinite;
+}
+
+/* Deep ember — bottom left */
+.polemos-aurora-blob.b3 {
+  width: 60vw;
+  height: 60vw;
+  bottom: -28%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(220, 130, 90, 0.45) 0%, rgba(160, 80, 60, 0.14) 42%, transparent 65%);
+  animation: polemos-aurora-3 38s ease-in-out infinite;
+}
+
+/* Dusty teal — bottom right (cool counterpoint) */
+.polemos-aurora-blob.b4 {
+  width: 50vw;
+  height: 50vw;
+  bottom: -22%;
+  right: -12%;
+  background: radial-gradient(circle, rgba(80, 160, 170, 0.42) 0%, rgba(50, 110, 130, 0.14) 40%, transparent 62%);
+  animation: polemos-aurora-4 30s ease-in-out infinite;
+}
+
+/* Bright cream highlight — center, brings the heat into the middle */
+.polemos-aurora-blob.b5 {
+  width: 36vw;
+  height: 36vw;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 248, 232, 0.42) 0%, rgba(255, 240, 210, 0.12) 45%, transparent 70%);
+  animation: polemos-aurora-5 22s ease-in-out infinite;
+}
+
+@keyframes polemos-aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(14%, 10%) scale(1.12); }
+}
+@keyframes polemos-aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-12%, 16%) scale(1.18); }
+}
+@keyframes polemos-aurora-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(18%, -14%) scale(1.10); }
+}
+@keyframes polemos-aurora-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-14%, -10%) scale(1.20); }
+}
+@keyframes polemos-aurora-5 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50%      { transform: translate(-40%, -60%) scale(1.25); }
+}
+
+/* Edge vignette so the aurora blooms into a darker frame */
+.polemos-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.55) 95%),
+    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 28%, transparent 72%, rgba(0,0,0,0.45) 100%);
+}
+
+/* ── Liquid shimmer headline ──
+   A bright sheen sweeps across the letterforms continuously. */
+.t-shimmer {
+  background-image: linear-gradient(
+    115deg,
+    #d8c9b4 0%,
+    #e8d9c7 30%,
+    #fff7ec 47%,
+    #ffffff 50%,
+    #fff7ec 53%,
+    #e8d9c7 70%,
+    #c9a777 100%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: polemos-shimmer 7s linear infinite;
+}
+
+@keyframes polemos-shimmer {
+  0%   { background-position: 120% 50%; }
+  100% { background-position: -40% 50%; }
+}
+
+/* Soft horizon line to anchor the composition */
+.polemos-horizon {
+  position: absolute;
+  left: 50%;
+  bottom: 18%;
+  width: min(80vw, 1100px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent 0%, rgba(232,217,199,0.35) 50%, transparent 100%);
+  box-shadow: 0 0 24px rgba(232,217,199,0.18);
 }

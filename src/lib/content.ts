@@ -38,47 +38,47 @@ export interface TextSegment {
 }
 
 export const tickerItems: TickerItem[] = [
-  { text: "Automate document-heavy workflows", accent: true },
+  { text: "AI systems for decisive operators", accent: true },
   { text: "·", accent: false },
-  { text: "From ingestion to deployed agents", accent: false },
+  { text: "From messy data to governed action", accent: false },
   { text: "·", accent: false },
-  { text: "Open-source models when they fit", accent: true },
+  { text: "Private models when control matters", accent: true },
   { text: "·", accent: false },
-  { text: "Ship the first workflow in weeks", accent: false },
+  { text: "Deploy the first workflow in weeks", accent: false },
   { text: "·", accent: false },
-  { text: "Private data. Auditable systems.", accent: true },
+  { text: "Audit trails. Guardrails. Human command.", accent: true },
   { text: "·", accent: false },
-  { text: "No AI theater. Production outcomes.", accent: false },
+  { text: "No demo theater. Operational advantage.", accent: false },
   { text: "·", accent: false },
 ];
 
 export const outcomes: Outcome[] = [
   {
     industry: "Finance & Operations",
-    result: "Invoices routed, checked, and reconciled automatically",
-    story: "Ingest PDFs, emails, and ERP records; validate fields; and escalate only the exceptions that need a human decision.",
-    highlight: "Move teams from manual review to exception handling.",
+    result: "Invoices move from inbox chaos to controlled exception queues",
+    story: "Ingest PDFs, emails, and ERP records; validate fields against policy; and escalate only the decisions that need a human owner.",
+    highlight: "Replace manual chasing with governed review loops.",
   },
   {
     industry: "Logistics & Supply Chain",
-    result: "Demand signals become procurement decisions",
-    story: "Connect transaction history, supplier data, and live operational context so planners act before bottlenecks turn expensive.",
-    highlight: "Turn forecasts into workflow triggers, not dashboard noise.",
+    result: "Demand signals become procurement moves before pressure hits",
+    story: "Connect transaction history, supplier data, and live operational context so planners can act before bottlenecks become expensive.",
+    highlight: "Turn forecasts into triggers, not another dashboard.",
   },
   {
     industry: "Professional Services",
-    result: "Internal knowledge becomes an analyst copilot",
-    story: "Build retrieval, citation, and synthesis systems across contracts, research, tickets, and client documents.",
+    result: "Institutional knowledge becomes a cited analyst layer",
+    story: "Build retrieval, citation, and synthesis systems across contracts, research, tickets, and client records.",
     highlight: "Senior teams spend less time searching and more time deciding.",
   },
 ];
 
 export const products: Product[] = [
   {
-    tag: "Enterprise Knowledge",
+    tag: "Knowledge Command",
     name: "OmniGraph",
-    codename: "Private Knowledge Layer",
-    description: "Turns fragmented enterprise data into a governed context layer for search, RAG, analytics, and agents.",
+    codename: "Governed Context Layer",
+    description: "Turns fragmented enterprise data into a permission-aware command layer for search, RAG, analytics, and agents.",
     features: [
       "Ingests CRM, ERP, documents, tickets, and databases",
       "Resolves entities, permissions, and source-of-truth conflicts",
@@ -86,10 +86,10 @@ export const products: Product[] = [
     ],
   },
   {
-    tag: "Autonomous Operations",
+    tag: "Workflow Command",
     name: "NeuroTask",
-    codename: "Agentic Workflow Runtime",
-    description: "Coordinates AI agents, tools, validations, and approvals across multi-step operational workflows.",
+    codename: "Agentic Operations Runtime",
+    description: "Coordinates agents, tools, validations, and approvals across operational workflows where reliability matters.",
     features: [
       "Breaks work into inspectable, testable steps",
       "Escalates uncertainty instead of guessing",
@@ -100,67 +100,67 @@ export const products: Product[] = [
 
 export const services: Service[] = [
   {
-    problem: "You need clarity before investment",
-    title: "AI Workflow Discovery",
-    description: "We identify the workflows worth automating, the data required, and the quickest path to production value.",
+    problem: "Choose the battlefield",
+    title: "AI Opportunity Mapping",
+    description: "We identify the workflows worth automating, the data required, and the fastest route to measurable production value.",
   },
   {
-    problem: "Your data is messy and scattered",
-    title: "Data Ingestion & Retrieval",
-    description: "Pipelines, indexing, knowledge graphs, and RAG systems that make internal data usable by people and agents.",
+    problem: "Make data usable",
+    title: "Ingestion, Retrieval & Knowledge Graphs",
+    description: "Pipelines, indexing, permissions, and RAG systems that make internal data usable by people, agents, and decision systems.",
   },
   {
-    problem: "Work still depends on handoffs",
+    problem: "Move from chat to action",
     title: "Agentic Workflow Automation",
-    description: "AI agents that execute bounded tasks, use tools, validate outputs, and hand off to humans at the right moment.",
+    description: "Agents that execute bounded tasks, use tools, validate outputs, and hand off to humans at the right moment.",
   },
   {
-    problem: "You need control over model behavior",
+    problem: "Keep control",
     title: "Model Deployment & Tuning",
-    description: "Open-source model deployment, evaluation, fine-tuning, and monitoring for secure enterprise environments.",
+    description: "Open-source model deployment, evaluation, fine-tuning, and monitoring for teams that need security, cost control, and auditability.",
   },
 ];
 
 export const processSteps: ProcessStep[] = [
   {
-    number: "01 / EVALUATE",
-    title: "Diagnose",
+    number: "01 / MAP",
+    title: "Recon",
     duration: "2 weeks",
-    description: "Map high-friction workflows, data readiness, security constraints, and ROI. You leave with a prioritized implementation brief.",
+    description: "Map high-friction workflows, data readiness, risk, and ROI. You leave with a prioritized implementation brief.",
   },
   {
-    number: "02 / ARCHITECT",
-    title: "Architect",
+    number: "02 / DESIGN",
+    title: "Plan",
     duration: "3 weeks",
-    description: "Define the system design, model strategy, integration plan, evaluation set, and human-in-the-loop controls before code.",
+    description: "Define architecture, model strategy, integrations, evaluation sets, and human-in-the-loop controls before code.",
   },
   {
-    number: "03 / BUILD",
-    title: "Build",
+    number: "03 / DEPLOY",
+    title: "Execute",
     duration: "4 – 6 weeks",
     description: "Ship the first production workflow with ingestion, retrieval, agents, tests, observability, and real user feedback.",
   },
   {
-    number: "04 / SCALE",
-    title: "Scale",
+    number: "04 / EXPAND",
+    title: "Command",
     duration: "Ongoing",
     description: "Harden the system, expand to adjacent workflows, monitor quality and cost, and train your team to operate it.",
   },
 ];
 
 export const fitItems: TextSegment[][] = [
-  [{ text: "You have a " }, { text: "specific workflow bottleneck", bold: true }, { text: " with measurable cost or delay" }],
-  [{ text: "You own " }, { text: "proprietary data", bold: true }, { text: " that should become an operational advantage" }],
+  [{ text: "You have a " }, { text: "specific operational bottleneck", bold: true }, { text: " with measurable cost, delay, or risk" }],
+  [{ text: "You own " }, { text: "proprietary data", bold: true }, { text: " that should become a strategic advantage" }],
   [{ text: "You need " }, { text: "secure deployment", bold: true }, { text: " across existing tools, teams, and approval paths" }],
   [{ text: "You measure success by " }, { text: "business outcomes", bold: true }, { text: ", not model benchmarks or prototypes" }],
   [{ text: "You have the " }, { text: "mandate to ship", bold: true }, { text: " and a team ready to own the system after launch" }],
 ];
 
 export const problemStats = [
-  { value: "01", label: "workflow first, model second" },
+  { value: "01", label: "workflow terrain mapped before model choice" },
   { value: "02", label: "private data connected with permissions intact" },
-  { value: "03", label: "human approval where risk is high" },
-  { value: "04", label: "production monitoring from day one" },
+  { value: "03", label: "human command where risk is high" },
+  { value: "04", label: "production telemetry from day one" },
 ] as const;
 
 export const navLinks = [

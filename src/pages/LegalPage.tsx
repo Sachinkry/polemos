@@ -49,10 +49,11 @@ const LegalPage = ({ title, eyebrow, intro, sections }: LegalPageProps) => (
 
         <div className="mt-14 space-y-10 border-t border-white/7 pt-10">
           {sections.map((section) => (
-            <section key={section.title} className="grid gap-4 md:grid-cols-[220px_1fr]">
-              <h2 className="font-mono text-[0.72rem] uppercase tracking-[0.16em] text-gold">
-                {section.title}
-              </h2>
+            <section
+              key={section.title}
+              className="grid gap-4 md:grid-cols-[220px_1fr] md:items-baseline"
+            >
+              <h2 className="t-eyebrow text-gold">{section.title}</h2>
               <div className="space-y-4">
                 {section.body.map((paragraph) => (
                   <p key={paragraph} className="text-[0.95rem] leading-[1.85] text-warm-muted">
