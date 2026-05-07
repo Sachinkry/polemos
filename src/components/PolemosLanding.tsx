@@ -233,9 +233,8 @@ const PolemosLanding = () => {
             {[...tickerItems, ...tickerItems].map((item, i) => (
               <span
                 key={i}
-                className={`px-12 text-[0.78rem] font-medium uppercase tracking-[0.12em] ${
-                  item.accent ? "text-gold" : "text-warm-muted"
-                }`}
+                className={`px-12 text-[0.58rem] font-medium uppercase tracking-[0.12em] ${item.accent ? "text-gold" : "text-warm-muted"
+                  }`}
               >
                 {item.text}
               </span>
