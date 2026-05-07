@@ -437,8 +437,8 @@ const PolemosLanding = () => {
 
           {/* Header */}
           <div data-reveal className="polemos-reveal mb-12 text-center">
-            <SectionLabel>Ready to take command?</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Take command</h2>
+            <SectionLabel>Work with us</SectionLabel>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Let's build it</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               Tell us where work is slow, risky, or stuck. We'll figure out the right move.
             </p>
