@@ -124,7 +124,7 @@ export const services: Service[] = [
 export const processSteps: ProcessStep[] = [
   {
     number: "01 / MAP",
-    title: "Recon",
+    title: "Discover",
     duration: "2 weeks",
     description: "Map high-friction workflows, data readiness, risk, and ROI. You leave with a prioritized implementation brief.",
   },

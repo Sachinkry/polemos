@@ -251,7 +251,7 @@ const PolemosLanding = () => {
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>The problem</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Command is hard.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Command is hard</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               AI fails when it's bolted onto broken process — the hard work is the wiring.
             </p>
@@ -281,7 +281,7 @@ const PolemosLanding = () => {
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>What deployed looks like</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">What ships.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">What ships</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               What changes after a Polemos system goes live across operations.
             </p>
@@ -314,7 +314,7 @@ const PolemosLanding = () => {
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Implementation accelerators</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Accelerators.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Accelerators</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               Battle-tested foundations adapted to your terrain — deployment in weeks.
             </p>
@@ -354,7 +354,7 @@ const PolemosLanding = () => {
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Core services</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Built to ship.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Built to ship</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               AI, software, and systems engineered for the production floor — not the demo deck.
             </p>
@@ -389,7 +389,7 @@ const PolemosLanding = () => {
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>How we work</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Recon before scale.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Validate before scale</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               We deploy what proves useful and retire what doesn't.
             </p>
@@ -416,7 +416,7 @@ const PolemosLanding = () => {
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Who we work with</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Real stakes only.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Real stakes only</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               Painful workflow, proprietary data, mandate to ship — that's the fit.
             </p>
@@ -452,7 +452,7 @@ const PolemosLanding = () => {
           {/* Header */}
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Ready to take command?</SectionLabel>
-            <h2 className="t-h2 text-gradient-neutral mx-auto">Take command.</h2>
+            <h2 className="t-h2 text-gradient-neutral mx-auto">Take command</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
               Tell us where work is slow, risky, or stuck — we'll figure out the right move.
             </p>
@@ -611,8 +611,8 @@ const PolemosLanding = () => {
               <div className="box-gradient-neutral rounded-3xl border border-white/10 p-8">
                 <p className="t-eyebrow text-gold">What to expect</p>
                 <p className="t-body-sm mt-4 text-warm-muted">
-                  We'll respond with a practical read: whether AI is the right tool, what data and integrations matter, and what a first deployable system could look like.{" "}
-                  <span className="text-warm-text">No generic transformation deck.</span>
+                  We'll reply within 48 hours and set up a{" "}
+                  <span className="text-warm-text">30-minute video call</span> to walk through fit, data, and what to ship first.
                 </p>
               </div>
             </div>
