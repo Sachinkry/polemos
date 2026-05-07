@@ -1,6 +1,7 @@
 <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Polemos Labs social avatar">
   <rect width="1024" height="1024" fill="#08080a"/>
-  <g transform="translate(160 160) scale(7.04)">
+  <circle cx="512" cy="512" r="464" stroke="#e8d9c7" stroke-width="14" fill="none"/>
+  <g transform="translate(180 180) scale(6.64)">
     <path d="M 50 8 L 58 42 L 92 50 L 58 58 L 50 92 L 42 58 L 8 50 L 42 42 Z" fill="#e8d9c7"/>
   </g>
 </svg>

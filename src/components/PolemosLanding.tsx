@@ -1,12 +1,11 @@
 import { useState, useEffect, type FormEvent } from "react";
-import { ArrowRight, Mail, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Mail, Menu, X } from "lucide-react";
 import Footer from "./Footer";
 import SectionLabel from "./SectionLabel";
 import XLogo from "./XLogo";
 import { useCustomCursor } from "@/hooks/useCustomCursor";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import {
-  tickerItems,
   outcomes,
   products,
   services,
@@ -214,7 +213,7 @@ const PolemosLanding = () => {
             AI built for business
           </h1>
           <p className="t-body mt-8 max-w-[56ch] animate-[polemos-fade-up_0.9s_0.5s_forwards] text-warm-muted opacity-0">
-            Polemos Labs turns fragmented data, manual review, and tool sprawl into governed systems that sense what matters and route the next move — keeping humans in command.
+            Polemos Labs turns fragmented data, manual review, and tool sprawl into governed systems that sense what matters and route the next move, keeping humans in command.
           </p>
           <a
             href="#contact"
@@ -223,34 +222,24 @@ const PolemosLanding = () => {
             Get in touch <ArrowRight className="h-4 w-4" />
           </a>
         </div>
+
+        <a
+          href="#problem"
+          aria-label="Scroll to next section"
+          className="polemos-scroll-cue absolute bottom-10 left-1/2 z-10 -translate-x-1/2 text-warm-muted transition-colors hover:text-gold"
+        >
+          <ChevronDown className="h-6 w-6" strokeWidth={1.5} />
+        </a>
       </section>
 
-      {/* ── TICKER ── */}
-      <div className="border-y border-white/7 bg-surface/70 py-[0.9rem] backdrop-blur-xl">
-        <div className="polemos-ticker">
-          <div className="polemos-ticker-track">
-            {/* Doubled for seamless loop */}
-            {[...tickerItems, ...tickerItems].map((item, i) => (
-              <span
-                key={i}
-                className={`px-12 text-[0.58rem] font-medium uppercase tracking-[0.12em] ${item.accent ? "text-gold" : "text-warm-muted"
-                  }`}
-              >
-                {item.text}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* ── PROBLEM ── */}
-      <section className="bg-surface px-5 py-28 md:px-16">
+      <section id="problem" className="bg-surface px-5 py-28 md:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>The problem</SectionLabel>
             <h2 className="t-h2 text-gradient-neutral mx-auto">Command is hard</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
-              AI fails when it's bolted onto broken process — the hard work is the wiring.
+              AI fails when it's bolted onto broken process. The hard work is the wiring.
             </p>
           </div>
 
@@ -313,7 +302,7 @@ const PolemosLanding = () => {
             <SectionLabel>Implementation accelerators</SectionLabel>
             <h2 className="t-h2 text-gradient-neutral mx-auto">Accelerators</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
-              Battle-tested foundations adapted to your terrain — deployment in weeks.
+              Battle-tested foundations adapted to your terrain. Deployment in weeks.
             </p>
           </div>
 
@@ -353,7 +342,7 @@ const PolemosLanding = () => {
             <SectionLabel>Core services</SectionLabel>
             <h2 className="t-h2 text-gradient-neutral mx-auto">Built to ship</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
-              AI, software, and systems engineered for the production floor — not the demo deck.
+              AI, software, and systems engineered for the production floor, not the demo deck.
             </p>
           </div>
 
@@ -415,18 +404,18 @@ const PolemosLanding = () => {
             <SectionLabel>Who we work with</SectionLabel>
             <h2 className="t-h2 text-gradient-neutral mx-auto">Real stakes only</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
-              Painful workflow, proprietary data, mandate to ship — that's the fit.
+              Painful workflow, proprietary data, mandate to ship. That's the fit.
             </p>
           </div>
 
           <ul
             data-reveal
-            className="glass-tile polemos-reveal mx-auto max-w-[840px] border border-white/10 bg-white/[0.04]"
+            className="glass-tile box-gradient-neutral-static polemos-reveal mx-auto max-w-[840px] border border-white/10"
           >
             {fitItems.map((segments, i) => (
               <li
                 key={i}
-                className={`flex items-baseline gap-4 px-7 py-[1.4rem] text-[0.9rem] leading-[1.5] text-warm-muted ${i < fitItems.length - 1 ? "border-b border-white/7" : ""
+                className={`flex items-baseline gap-4 px-7 py-[1.4rem] text-[0.9rem] leading-[1.5] text-warm-muted transition-colors duration-200 hover:bg-white/[0.04] hover:text-warm-text ${i < fitItems.length - 1 ? "border-b border-white/7" : ""
                   }`}
               >
                 <span className="shrink-0 text-[0.9rem] leading-[1.5] text-gold" aria-hidden="true">
@@ -451,7 +440,7 @@ const PolemosLanding = () => {
             <SectionLabel>Ready to take command?</SectionLabel>
             <h2 className="t-h2 text-gradient-neutral mx-auto">Take command</h2>
             <p className="t-body-sm mx-auto mt-5 max-w-[60ch] text-warm-muted">
-              Tell us where work is slow, risky, or stuck — we'll figure out the right move.
+              Tell us where work is slow, risky, or stuck. We'll figure out the right move.
             </p>
           </div>
 

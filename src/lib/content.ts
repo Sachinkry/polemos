@@ -75,25 +75,25 @@ export const outcomes: Outcome[] = [
 
 export const products: Product[] = [
   {
-    tag: "Knowledge Command",
+    tag: "Retrieval Command",
     name: "OmniGraph",
-    codename: "Governed Context Layer",
-    description: "Turns fragmented enterprise data into a permission-aware command layer for search, RAG, analytics, and agents.",
+    codename: "Grounded Retrieval Layer",
+    description: "Production retrieval stack. Answers grounded in your data, with citations.",
     features: [
-      "Ingests CRM, ERP, documents, tickets, and databases",
-      "Resolves entities, permissions, and source-of-truth conflicts",
-      "Grounds AI outputs with traceable, structured context",
+      "Hybrid search and rerank for high-precision recall",
+      "Permission-aware grounding across your systems",
+      "Eval harness for precision, recall, and faithfulness",
     ],
   },
   {
-    tag: "Workflow Command",
+    tag: "Agent Command",
     name: "NeuroTask",
-    codename: "Agentic Operations Runtime",
-    description: "Coordinates agents, tools, validations, and approvals across operational workflows where reliability matters.",
+    codename: "Supervised Agent Runtime",
+    description: "Graph-based agent runtime with typed tools and human approval gates.",
     features: [
-      "Breaks work into inspectable, testable steps",
-      "Escalates uncertainty instead of guessing",
-      "Logs actions, approvals, and model decisions for audit",
+      "Supervisor and worker agents on a typed state graph",
+      "Schema-validated tools, sandboxed and least privilege",
+      "Human approvals on destructive actions, with full traces",
     ],
   },
 ];
