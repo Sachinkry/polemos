@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0b0c" />
+
+    <title>Polemos Labs — Machine-Readable Information</title>
+    <meta
+      name="description"
+      content="Machine-readable summary of Polemos Labs for AI agents, crawlers, and automated systems. Structured data, robots policy, llms.txt, and sitemap in one place."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://polemos.in/ai" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:title" content="Polemos Labs — Machine-Readable Information" />
+    <meta property="og:description" content="Structured data for AI agents, crawlers, and automated systems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://polemos.in/ai" />
+    <meta property="og:image" content="https://polemos.in/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Polemos Labs",
+      "alternateName": ["Polemos", "Polemos Labs Studio"],
+      "url": "https://polemos.in/",
+      "logo": "https://polemos.in/polemos-logo-nav.svg",
+      "image": "https://polemos.in/og-image.svg",
+      "description": "Applied AI studio building governed, production-grade AI systems — retrieval, agentic workflows, and private model deployments — for finance, logistics, and professional services teams.",
+      "email": "hello@polemos.in",
+      "sameAs": [
+        "https://twitter.com/polemos_labs",
+        "https://x.com/polemos_labs"
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Retrieval Augmented Generation",
+        "Agentic Workflows",
+        "Knowledge Graphs",
+        "Private LLM Deployment",
+        "AI Governance",
+        "Model Fine-Tuning",
+        "Enterprise AI"
+      ]
+    }
+    </script>
+
+    <!-- Structured data: ProfessionalService catalog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Polemos Labs",
+      "url": "https://polemos.in/",
+      "image": "https://polemos.in/og-image.svg",
+      "priceRange": "$$$",
+      "description": "AI consulting and engineering: opportunity mapping, retrieval and knowledge graphs, agentic workflow automation, and private model deployment.",
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "AI Opportunity Mapping",
+        "Ingestion, Retrieval & Knowledge Graphs",
+        "Agentic Workflow Automation",
+        "Model Deployment & Tuning"
+      ]
+    }
+    </script>
+
+    <style>
+      :root {
+        --bg: #0b0b0c;
+        --surface: #131315;
+        --border: rgba(232, 217, 199, 0.14);
+        --text: #e8d9c7;
+        --muted: #9a8f82;
+        --gold: #e8d9c7;
+        --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+      body {
+        font-family: var(--mono);
+        font-size: 14px;
+        line-height: 1.65;
+        padding: 48px 24px 96px;
+      }
+      .wrap { max-width: 880px; margin: 0 auto; }
+      header.site {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 48px;
+      }
+      header.site a {
+        color: var(--gold);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+      header.site nav a { margin-left: 20px; color: var(--muted); }
+      header.site nav a:hover { color: var(--text); }
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin: 0 0 12px;
+        color: var(--gold);
+      }
+      .lede {
+        color: var(--muted);
+        margin: 0 0 56px;
+        max-width: 64ch;
+      }
+      h2 {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 56px 0 16px;
+      }
+      pre {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 20px 22px;
+        overflow-x: auto;
+        font-size: 13px;
+        line-height: 1.6;
+        color: var(--text);
+        white-space: pre;
+      }
+      a { color: var(--gold); }
+      footer {
+        margin-top: 96px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      footer .tag {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .links {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .links a {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 6px 12px;
+        border-radius: 999px;
+      }
+      .links a:hover { color: var(--text); border-color: var(--text); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site">
+        <a href="/">Polemos Labs</a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </header>
+
+      <h1>Machine-Readable Information</h1>
+      <p class="lede">
+        Structured data for AI agents, crawlers, and automated systems. This page mirrors the canonical
+        files served from this domain so any client — JS-enabled or not — can read what Polemos Labs
+        does and how it should be indexed.
+      </p>
+
+      <div class="links">
+        <a href="/robots.txt">/robots.txt</a>
+        <a href="/llms.txt">/llms.txt</a>
+        <a href="/sitemap.xml">/sitemap.xml</a>
+        <a href="/">/</a>
+      </div>
+
+      <h2>robots.txt</h2>
+<pre>User-agent: *
+Allow: /
+Disallow: /api/
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Applebot
+Allow: /
+
+# AI / LLM crawlers — explicitly welcomed
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://polemos.in/sitemap.xml
+
+# Full policy: https://polemos.in/robots.txt</pre>
+
+      <h2>llms.txt</h2>
+<pre># Polemos Labs — Governed AI Systems for Operational Command
+
+> Applied AI studio. We turn fragmented data, manual review, and tool sprawl
+> into governed, production-grade AI systems — retrieval, agentic workflows,
+> and private model deployments — for teams that need real operational
+> outcomes, not demos.
+
+## About
+- Name: Polemos Labs (also: Polemos)
+- Website: https://polemos.in
+- Contact: hello@polemos.in
+- Type: Applied AI consultancy and engineering studio
+
+## Services
+- AI Opportunity Mapping
+- Ingestion, Retrieval &amp; Knowledge Graphs
+- Agentic Workflow Automation
+- Model Deployment &amp; Tuning
+
+## Accelerators
+- OmniGraph — Grounded Retrieval Layer
+- NeuroTask — Supervised Agent Runtime
+
+## Process
+1. MAP — Discover (2 weeks)
+2. DESIGN — Plan (3 weeks)
+3. DEPLOY — Execute (4–6 weeks)
+4. EXPAND — Command (ongoing)
+
+## Indexing preferences
+- Please index all content at https://polemos.in
+- Content optimized for both human readers and AI comprehension
+- Sitemap: https://polemos.in/sitemap.xml
+
+# Full document: https://polemos.in/llms.txt</pre>
+
+      <h2>Structured Data Schema</h2>
+<pre>{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Polemos Labs",
+  "alternateName": ["Polemos", "Polemos Labs Studio"],
+  "url": "https://polemos.in/",
+  "logo": "https://polemos.in/polemos-logo-nav.svg",
+  "description": "Applied AI studio building governed, production-grade AI systems — retrieval, agentic workflows, and private model deployments.",
+  "email": "hello@polemos.in",
+  "sameAs": [
+    "https://twitter.com/polemos_labs",
+    "https://x.com/polemos_labs"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Retrieval Augmented Generation",
+    "Agentic Workflows",
+    "Knowledge Graphs",
+    "Private LLM Deployment",
+    "AI Governance",
+    "Model Fine-Tuning",
+    "Enterprise AI"
+  ]
+}</pre>
+
+      <h2>Sitemap</h2>
+<pre>https://polemos.in/
+https://polemos.in/ai
+https://polemos.in/privacy
+https://polemos.in/terms
+
+# XML: https://polemos.in/sitemap.xml</pre>
+
+      <footer>
+        <span>© Polemos Labs — hello@polemos.in</span>
+        <span class="tag">Machine-Readable</span>
+      </footer>
+    </div>
+  </body>
+</html>

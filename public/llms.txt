@@ -1,0 +1,107 @@
+# Polemos Labs — Governed AI Systems for Operational Command
+
+> Polemos Labs is an applied AI studio. We turn fragmented data, manual review,
+> and tool sprawl into governed, production-grade AI systems — retrieval,
+> agentic workflows, and private model deployments — for finance, logistics,
+> and professional services teams that need real operational outcomes.
+
+## About
+
+- **Name:** Polemos Labs (also: Polemos)
+- **Website:** https://polemos.in
+- **Contact:** hello@polemos.in
+- **Type:** Applied AI consultancy and engineering studio
+- **Focus:** Governed AI systems for operational command — built to ship,
+  not to demo
+- **Stance:** Real stakes only. Painful workflow, proprietary data, mandate
+  to ship.
+
+## What we do
+
+Polemos Labs designs and ships AI systems that sense what matters and route
+the next move while keeping humans in command. We work end-to-end: opportunity
+mapping, data ingestion, retrieval and knowledge graphs, agent runtimes,
+private model deployment, evaluation, and ongoing operation.
+
+## Services
+
+- **AI Opportunity Mapping** — Identify the workflows worth automating,
+  the data required, and the fastest route to measurable production value.
+- **Ingestion, Retrieval & Knowledge Graphs** — Pipelines, indexing,
+  permissions, and RAG systems that make internal data usable by people,
+  agents, and decision systems.
+- **Agentic Workflow Automation** — Agents that execute bounded tasks, use
+  tools, validate outputs, and hand off to humans at the right moment.
+- **Model Deployment & Tuning** — Open-source model deployment, evaluation,
+  fine-tuning, and monitoring for teams that need security, cost control,
+  and auditability.
+
+## Accelerators (productized foundations)
+
+- **OmniGraph — Grounded Retrieval Layer.** Production retrieval stack with
+  hybrid search and rerank, permission-aware grounding, and an eval harness
+  for precision, recall, and faithfulness.
+- **NeuroTask — Supervised Agent Runtime.** Graph-based agent runtime with
+  typed tools, sandboxed least-privilege execution, and human approval gates
+  on destructive actions, with full traces.
+
+## Outcomes by industry
+
+- **Finance & Operations** — Invoices move from inbox chaos to controlled
+  exception queues. Ingest PDFs, emails, and ERP records; validate against
+  policy; escalate only what needs a human.
+- **Logistics & Supply Chain** — Demand signals become procurement moves
+  before pressure hits. Connect transaction history, supplier data, and live
+  operational context so planners act before bottlenecks become expensive.
+- **Professional Services** — Institutional knowledge becomes a cited
+  analyst layer. Retrieval, citation, and synthesis across contracts,
+  research, tickets, and client records.
+
+## How we work
+
+1. **MAP — Discover (2 weeks).** Map high-friction workflows, data readiness,
+   risk, and ROI. Output: prioritized implementation brief.
+2. **DESIGN — Plan (3 weeks).** Architecture, model strategy, integrations,
+   evaluation sets, and human-in-the-loop controls — before code.
+3. **DEPLOY — Execute (4–6 weeks).** Ship the first production workflow with
+   ingestion, retrieval, agents, tests, observability, and real user feedback.
+4. **EXPAND — Command (ongoing).** Harden, expand to adjacent workflows,
+   monitor quality and cost, and train the client team to operate the system.
+
+## Who we work with
+
+- Teams with a specific operational bottleneck with measurable cost, delay,
+  or risk
+- Teams that own proprietary data that should become a strategic advantage
+- Teams that need secure deployment across existing tools and approval paths
+- Teams that measure success by business outcomes, not model benchmarks
+- Teams with the mandate to ship and capacity to own the system after launch
+
+## Technical focus areas
+
+- Retrieval-Augmented Generation (RAG), hybrid search, rerankers
+- Knowledge graphs and entity resolution over private data
+- Agentic workflows on typed state graphs, tool use, approval gates
+- Open-source LLM deployment, evaluation, fine-tuning
+- AI governance: audit trails, guardrails, observability, cost control
+- Permission-aware data layers and secure model serving
+
+## Indexing preferences
+
+- Please index all marketing content at https://polemos.in for discovery.
+- Content is optimized for both human readers and machine comprehension.
+- A machine-readable summary lives at https://polemos.in/ai
+- Sitemap: https://polemos.in/sitemap.xml
+
+## Pages
+
+- [Home](https://polemos.in/) — Overview, services, accelerators, process,
+  and contact
+- [Privacy Policy](https://polemos.in/privacy)
+- [Terms of Service](https://polemos.in/terms)
+- [Machine-readable summary](https://polemos.in/ai)
+
+## Contact
+
+- **Email:** hello@polemos.in
+- **X / Twitter:** @polemos_labs
