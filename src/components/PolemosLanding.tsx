@@ -124,7 +124,7 @@ const PolemosLanding = () => {
 
       {/* ── NAV ── floating glass pill */}
       <nav className="fixed inset-x-0 top-4 z-50 px-4 md:top-6 md:px-8">
-        <div className="mx-auto grid w-full max-w-[1120px] grid-cols-[auto_1fr_auto] items-center gap-4 rounded-full border border-white/15 bg-canvas/60 px-4 py-2.5 shadow-[0_24px_60px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(232,217,199,0.08),0_0_40px_-10px_rgba(232,217,199,0.25)] ring-1 ring-gold/15 backdrop-blur-2xl backdrop-saturate-150 md:px-5 md:py-3">
+        <div className="mx-auto grid w-full max-w-[1120px] grid-cols-[auto_1fr_auto] uppercase items-center gap-4 rounded-full border border-white/15 bg-canvas/60 px-4 py-2.5 shadow-[0_24px_60px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(232,217,199,0.08),0_0_40px_-10px_rgba(232,217,199,0.25)] ring-1 ring-gold/15 backdrop-blur-2xl backdrop-saturate-150 md:px-5 md:py-3">
           <a
             href="#"
             className="justify-self-start inline-flex items-center gap-2.5 pl-2 font-display text-[1.05rem] font-semibold tracking-[0.02em] text-gold md:text-[1.15rem]"

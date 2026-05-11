@@ -28,6 +28,6 @@ dist-ssr
 
 # Local-only design backups & dev artifacts
 public/legacy-logos/
-public/avatar-preview.html
-public/logo-preview.html
+public/logo-concepts/
+public/*-preview.html
 repomix-output.xml
