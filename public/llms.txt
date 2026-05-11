@@ -1,4 +1,4 @@
-# Polemos Labs — Governed AI Systems for Operational Command
+# Polemos Labs — AI Systems for Enterprise Operations
 
 > Polemos Labs is an applied AI studio. We turn fragmented data, manual review,
 > and tool sprawl into governed, production-grade AI systems — retrieval,
