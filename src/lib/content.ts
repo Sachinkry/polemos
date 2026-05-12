@@ -164,8 +164,8 @@ export const problemStats = [
 ] as const;
 
 export const navLinks = [
-  { label: "Work", href: "#outcomes" },
   { label: "Accelerators", href: "#products" },
   { label: "Services", href: "#services" },
   { label: "Process", href: "#process" },
+  { label: "Blog", href: "/blog" },
 ] as const;

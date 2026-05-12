@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1400" height="720" fill="#F4EFE5"/>
+
+  <text x="700" y="60" text-anchor="middle" font-size="30" font-weight="700" fill="#2A2A2A">Review and governance: four parallel checks before sign-off</text>
+  <text x="700" y="98" text-anchor="middle" font-size="16" font-family="Inter, system-ui, sans-serif" fill="#6B6B6B">The draft fans out into machine checks. The reviewer sees only the disagreements.</text>
+
+  <!-- Draft (left) -->
+  <g>
+    <rect x="60" y="280" width="200" height="120" rx="12" fill="#1F3A5F"/>
+    <text x="160" y="320" text-anchor="middle" font-size="13" fill="#F4EFE5" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">INPUT</text>
+    <text x="160" y="350" text-anchor="middle" font-size="20" font-weight="700" fill="#F4EFE5">Draft report</text>
+    <text x="160" y="378" text-anchor="middle" font-size="12" fill="#F4EFE5" font-family="Inter, system-ui, sans-serif" opacity="0.8">50–200 pages · cited</text>
+  </g>
+
+  <!-- Fan-out arrows from draft to each lane -->
+  <g stroke="#C75D2C" stroke-width="2.5" fill="none">
+    <line x1="266" y1="340" x2="380" y2="180"/>
+    <line x1="266" y1="340" x2="380" y2="290"/>
+    <line x1="266" y1="340" x2="380" y2="400"/>
+    <line x1="266" y1="340" x2="380" y2="510"/>
+  </g>
+
+  <!-- Four parallel lanes -->
+  <g font-family="Inter, system-ui, sans-serif">
+    <!-- Lane 1: numerical -->
+    <rect x="380" y="140" width="540" height="84" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="400" y="172" font-size="12" fill="#C75D2C" letter-spacing="1.6" font-weight="700">DETERMINISTIC</text>
+    <text x="400" y="198" font-size="18" font-weight="700" fill="#1F3A5F" font-family="Georgia, serif">Numerical consistency</text>
+    <text x="400" y="218" font-size="12" fill="#6B6B6B">PLI &amp; IQR values must match across every section</text>
+
+    <!-- Lane 2: citation -->
+    <rect x="380" y="250" width="540" height="84" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="400" y="282" font-size="12" fill="#C75D2C" letter-spacing="1.6" font-weight="700">DETERMINISTIC</text>
+    <text x="400" y="308" font-size="18" font-weight="700" fill="#1F3A5F" font-family="Georgia, serif">Citation audit</text>
+    <text x="400" y="328" font-size="12" fill="#6B6B6B">Every regulatory reference resolved against canonical source</text>
+
+    <!-- Lane 3: compliance -->
+    <rect x="380" y="360" width="540" height="84" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="400" y="392" font-size="12" fill="#C75D2C" letter-spacing="1.6" font-weight="700">LLM-AS-JUDGE</text>
+    <text x="400" y="418" font-size="18" font-weight="700" fill="#1F3A5F" font-family="Georgia, serif">Jurisdiction checklist</text>
+    <text x="400" y="438" font-size="12" fill="#6B6B6B">50–100 item rubric · India / UAE / OECD-specific</text>
+
+    <!-- Lane 4: sensitivity -->
+    <rect x="380" y="470" width="540" height="84" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="400" y="502" font-size="12" fill="#C75D2C" letter-spacing="1.6" font-weight="700">SIMULATION</text>
+    <text x="400" y="528" font-size="18" font-weight="700" fill="#1F3A5F" font-family="Georgia, serif">Sensitivity replay</text>
+    <text x="400" y="548" font-size="12" fill="#6B6B6B">Re-run benchmark with perturbed comparable sets</text>
+
+    <!-- Status chips on each lane (right side) -->
+    <g font-size="11" font-weight="700" letter-spacing="1">
+      <!-- Lane 1 -->
+      <rect x="780" y="170" width="120" height="26" rx="13" fill="#E8EDF3"/>
+      <text x="840" y="187" text-anchor="middle" fill="#1F3A5F">PASS · 9/10</text>
+
+      <!-- Lane 2 -->
+      <rect x="780" y="280" width="120" height="26" rx="13" fill="#F5DCC9"/>
+      <text x="840" y="297" text-anchor="middle" fill="#C75D2C">FLAG · 2 refs</text>
+
+      <!-- Lane 3 -->
+      <rect x="780" y="390" width="120" height="26" rx="13" fill="#E8EDF3"/>
+      <text x="840" y="407" text-anchor="middle" fill="#1F3A5F">PASS · 47/47</text>
+
+      <!-- Lane 4 -->
+      <rect x="780" y="500" width="120" height="26" rx="13" fill="#F5DCC9"/>
+      <text x="840" y="517" text-anchor="middle" fill="#C75D2C">REVIEW · 1 flip</text>
+    </g>
+  </g>
+
+  <!-- Fan-in arrows -->
+  <g stroke="#C75D2C" stroke-width="2.5" fill="none">
+    <line x1="920" y1="180" x2="1060" y2="340"/>
+    <line x1="920" y1="290" x2="1060" y2="340"/>
+    <line x1="920" y1="400" x2="1060" y2="340"/>
+    <line x1="920" y1="510" x2="1060" y2="340"/>
+  </g>
+
+  <!-- Reviewer sign-off -->
+  <g>
+    <rect x="1060" y="260" width="280" height="160" rx="12" fill="#1F3A5F"/>
+    <text x="1200" y="298" text-anchor="middle" font-size="13" fill="#F4EFE5" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">HUMAN-IN-THE-LOOP</text>
+    <text x="1200" y="330" text-anchor="middle" font-size="20" font-weight="700" fill="#F4EFE5">Reviewer queue</text>
+    <text x="1200" y="362" text-anchor="middle" font-size="13" fill="#F4EFE5" font-family="Inter, system-ui, sans-serif" opacity="0.85">Sees only the 3 lanes with flags ·</text>
+    <text x="1200" y="380" text-anchor="middle" font-size="13" fill="#F4EFE5" font-family="Inter, system-ui, sans-serif" opacity="0.85">approves, edits, or rejects.</text>
+    <text x="1200" y="406" text-anchor="middle" font-size="13" fill="#C75D2C" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6" font-weight="700">SIGN-OFF →</text>
+  </g>
+
+  <!-- Footnote -->
+  <text x="700" y="640" text-anchor="middle" font-size="14" font-family="Inter, system-ui, sans-serif" fill="#6B6B6B" font-style="italic">
+    Reviewer corrections become eval-set entries. The system learns from every sign-off.
+  </text>
+</svg>

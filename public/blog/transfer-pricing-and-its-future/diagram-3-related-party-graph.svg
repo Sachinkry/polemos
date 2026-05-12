@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="780" fill="#F4EFE5"/>
+
+  <text x="600" y="60" text-anchor="middle" font-size="30" font-weight="700" fill="#2A2A2A">Related-party detection as a graph problem</text>
+  <text x="600" y="98" text-anchor="middle" font-size="16" font-family="Inter, system-ui, sans-serif" fill="#6B6B6B">Solid edges trigger TP rules through ownership · Dashed edges trigger them through control.</text>
+
+  <!-- Edges (drawn before nodes) -->
+  <g stroke-width="2.5" fill="none">
+    <!-- Parent → Sub A 60% -->
+    <line x1="555" y1="226" x2="220" y2="370" stroke="#1F3A5F"/>
+    <!-- Parent → Sub B 40% -->
+    <line x1="600" y1="246" x2="600" y2="370" stroke="#1F3A5F"/>
+    <!-- Parent → Holdco C 90% -->
+    <line x1="645" y1="226" x2="980" y2="370" stroke="#1F3A5F"/>
+    <!-- Sub A → Sub D 30% -->
+    <line x1="220" y1="464" x2="220" y2="580" stroke="#1F3A5F"/>
+    <!-- Holdco C → Sub E 100% -->
+    <line x1="980" y1="464" x2="980" y2="580" stroke="#1F3A5F"/>
+    <!-- Family trust → Parent (dashed) -->
+    <line x1="220" y1="200" x2="500" y2="200" stroke="#C75D2C" stroke-dasharray="8 6"/>
+    <!-- Sub B → Vendor F (dashed, contract) -->
+    <line x1="600" y1="464" x2="600" y2="580" stroke="#C75D2C" stroke-dasharray="8 6"/>
+  </g>
+
+  <!-- Edge labels -->
+  <g font-family="Inter, system-ui, sans-serif" font-size="13" fill="#2A2A2A" font-weight="600">
+    <text x="360" y="285" text-anchor="middle">60%</text>
+    <text x="620" y="320" text-anchor="middle">40%</text>
+    <text x="840" y="285" text-anchor="middle">90%</text>
+    <text x="240" y="528" text-anchor="middle">30%</text>
+    <text x="1000" y="528" text-anchor="middle">100%</text>
+    <text x="360" y="190" text-anchor="middle" fill="#C75D2C" font-style="italic" font-weight="400">indirect via family</text>
+    <text x="730" y="528" text-anchor="middle" fill="#C75D2C" font-style="italic" font-weight="400">contractual control</text>
+  </g>
+
+  <!-- Parent (top center) -->
+  <g>
+    <rect x="500" y="170" width="200" height="80" rx="10" fill="#1F3A5F"/>
+    <text x="600" y="200" text-anchor="middle" font-size="12" fill="#F4EFE5" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">PARENT</text>
+    <text x="600" y="226" text-anchor="middle" font-size="17" font-weight="700" fill="#F4EFE5">GroupCo PLC</text>
+  </g>
+
+  <!-- Family trust (top left) -->
+  <g>
+    <rect x="60" y="170" width="240" height="80" rx="10" fill="#F5DCC9" stroke="#C75D2C" stroke-width="2"/>
+    <text x="180" y="200" text-anchor="middle" font-size="12" fill="#C75D2C" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">RELATED PERSON</text>
+    <text x="180" y="226" text-anchor="middle" font-size="16" font-weight="700" fill="#2A2A2A">Founder family trust</text>
+  </g>
+
+  <!-- Middle row: Sub A · Sub B · Holdco C -->
+  <g>
+    <rect x="120" y="370" width="200" height="94" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="220" y="398" text-anchor="middle" font-size="11" fill="#1F3A5F" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">SUBSIDIARY · INDIA</text>
+    <text x="220" y="424" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A2A">Sub A</text>
+    <text x="220" y="446" text-anchor="middle" font-size="12" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Manufacturing</text>
+  </g>
+
+  <g>
+    <rect x="500" y="370" width="200" height="94" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="600" y="398" text-anchor="middle" font-size="11" fill="#1F3A5F" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">SUBSIDIARY · UAE</text>
+    <text x="600" y="424" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A2A">Sub B</text>
+    <text x="600" y="446" text-anchor="middle" font-size="12" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Distribution</text>
+  </g>
+
+  <g>
+    <rect x="880" y="370" width="200" height="94" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="980" y="398" text-anchor="middle" font-size="11" fill="#1F3A5F" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">HOLDCO · NL</text>
+    <text x="980" y="424" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A2A">Holdco C</text>
+    <text x="980" y="446" text-anchor="middle" font-size="12" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">IP holder</text>
+  </g>
+
+  <!-- Bottom row: Sub D · Vendor F · Sub E -->
+  <g>
+    <rect x="120" y="580" width="200" height="94" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="220" y="608" text-anchor="middle" font-size="11" fill="#1F3A5F" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">GRANDCHILD</text>
+    <text x="220" y="634" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A2A">Sub D</text>
+    <text x="220" y="656" text-anchor="middle" font-size="12" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Service center</text>
+  </g>
+
+  <g>
+    <rect x="500" y="580" width="200" height="94" rx="10" fill="#FFFFFF" stroke="#C75D2C" stroke-width="2"/>
+    <text x="600" y="608" text-anchor="middle" font-size="11" fill="#C75D2C" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">CONTRACT-CONTROLLED</text>
+    <text x="600" y="634" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A2A">Vendor F</text>
+    <text x="600" y="656" text-anchor="middle" font-size="12" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">90% of B's spend</text>
+  </g>
+
+  <g>
+    <rect x="880" y="580" width="200" height="94" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="980" y="608" text-anchor="middle" font-size="11" fill="#1F3A5F" font-family="Inter, system-ui, sans-serif" letter-spacing="1.6">WHOLLY OWNED</text>
+    <text x="980" y="634" text-anchor="middle" font-size="17" font-weight="700" fill="#2A2A2A">Sub E</text>
+    <text x="980" y="656" text-anchor="middle" font-size="12" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">IP licensor</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-family="Inter, system-ui, sans-serif" font-size="13" fill="#2A2A2A">
+    <rect x="120" y="708" width="960" height="52" rx="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <line x1="150" y1="734" x2="200" y2="734" stroke="#1F3A5F" stroke-width="2.5"/>
+    <text x="215" y="739">Ownership ≥ 25% (associated enterprise, TP rules apply)</text>
+    <line x1="640" y1="734" x2="690" y2="734" stroke="#C75D2C" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <text x="705" y="739">Contractual / economic control (also triggers TP filing)</text>
+  </g>
+</svg>

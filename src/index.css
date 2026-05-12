@@ -855,3 +855,228 @@
   background: linear-gradient(90deg, transparent 0%, rgba(232,217,199,0.35) 50%, transparent 100%);
   box-shadow: 0 0 24px rgba(232,217,199,0.18);
 }
+
+/* ── Blog prose ──
+   Long-form reading styles for markdown-rendered post bodies.
+   Scoped to .prose-polemos so it doesn't leak into landing-page sections. */
+.prose-polemos {
+  font-family: var(--font-sans);
+  color: rgba(244, 238, 229, 0.92);
+  font-size: 1.1rem;
+  line-height: 1.85;
+  max-width: 820px;
+}
+
+.prose-polemos > * + * { margin-top: 1.6em; }
+.prose-polemos > p + p { margin-top: 1.35em; }
+
+.prose-polemos h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3.4vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+  margin-top: 3em;
+  margin-bottom: 0.7em;
+  color: var(--color-warm-text);
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.prose-polemos h2:first-child { margin-top: 0; }
+
+.prose-polemos h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-top: 2.4em;
+  margin-bottom: 0.5em;
+  color: var(--color-warm-text);
+}
+
+.prose-polemos h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+  margin-bottom: 0.35em;
+  color: var(--color-warm-text);
+}
+
+.prose-polemos p {
+  color: rgba(244, 238, 229, 0.92);
+}
+
+.prose-polemos > p:first-of-type {
+  font-size: 1.22rem;
+  line-height: 1.75;
+  color: var(--color-warm-text);
+  letter-spacing: -0.005em;
+}
+
+.prose-polemos strong {
+  color: var(--color-warm-text);
+  font-weight: 600;
+}
+.prose-polemos em {
+  color: var(--color-warm-text);
+  font-style: italic;
+}
+
+.prose-polemos a {
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(232, 217, 199, 0.4);
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+.prose-polemos a:hover {
+  text-decoration-color: var(--color-gold);
+  color: #fff7ec;
+}
+
+.prose-polemos ul,
+.prose-polemos ol {
+  padding-left: 1.5em;
+  color: rgba(244, 238, 229, 0.92);
+}
+.prose-polemos ul { list-style: none; padding-left: 0; }
+.prose-polemos ol { list-style: decimal; }
+.prose-polemos li { margin-top: 0.55em; padding-left: 0; }
+.prose-polemos ul > li {
+  position: relative;
+  padding-left: 1.5em;
+}
+.prose-polemos ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.1em;
+  top: 0.78em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-gold);
+  opacity: 0.7;
+}
+.prose-polemos ol > li::marker {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.prose-polemos blockquote {
+  margin: 2em 0;
+  padding: 1.1em 1.4em;
+  border-left: 2px solid var(--color-gold);
+  background: linear-gradient(90deg, rgba(232, 217, 199, 0.06), rgba(232, 217, 199, 0.01));
+  border-radius: 0 0.6rem 0.6rem 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--color-warm-text);
+}
+.prose-polemos blockquote p {
+  color: var(--color-warm-text);
+  margin: 0;
+}
+.prose-polemos blockquote p + p { margin-top: 0.8em; }
+
+.prose-polemos code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: rgba(232, 217, 199, 0.09);
+  padding: 0.15em 0.45em;
+  border-radius: 0.35rem;
+  color: var(--color-gold);
+  border: 1px solid rgba(232, 217, 199, 0.12);
+}
+
+.prose-polemos pre {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  background: rgba(8, 8, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.2em 1.4em;
+  border-radius: 0.7rem;
+  overflow-x: auto;
+  line-height: 1.65;
+  margin: 2em 0;
+}
+.prose-polemos pre code {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  color: var(--color-warm-text);
+}
+
+.prose-polemos hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 217, 199, 0.25), transparent);
+  margin: 3.5em 0;
+}
+
+.prose-polemos img {
+  border-radius: 0.8rem;
+  margin: 2em 0;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prose-polemos .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2em 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.015);
+}
+.prose-polemos table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+  margin: 0;
+}
+.prose-polemos thead {
+  background: rgba(232, 217, 199, 0.04);
+}
+.prose-polemos th,
+.prose-polemos td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.8em 1em;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-polemos tr:last-child td { border-bottom: 0; }
+.prose-polemos th {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.prose-polemos td {
+  color: rgba(244, 238, 229, 0.9);
+  line-height: 1.6;
+}
+.prose-polemos td strong { color: var(--color-warm-text); }
+
+/* Tighter mobile rhythm */
+@media (max-width: 640px) {
+  .prose-polemos { font-size: 1.02rem; line-height: 1.75; }
+  .prose-polemos > p:first-of-type { font-size: 1.12rem; line-height: 1.65; }
+  .prose-polemos h2 { font-size: 1.55rem; margin-top: 2em; padding-bottom: 0.4em; }
+  .prose-polemos h3 { font-size: 1.25rem; margin-top: 1.8em; }
+  .prose-polemos h4 { font-size: 1.05rem; }
+  .prose-polemos > * + * { margin-top: 1.3em; }
+  .prose-polemos blockquote { padding: 0.9em 1.1em; font-size: 1rem; }
+  .prose-polemos pre { font-size: 0.78rem; padding: 0.9em 1em; }
+  .prose-polemos ul > li { padding-left: 1.25em; }
+}
+

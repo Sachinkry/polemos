@@ -31,3 +31,6 @@ public/legacy-logos/
 public/logo-concepts/
 public/*-preview.html
 repomix-output.xml
+
+# Local outreach lists (private, do not commit)
+outreach/
