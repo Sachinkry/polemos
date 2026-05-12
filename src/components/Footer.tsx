@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import XLogo from "./XLogo";
 
 const footerLinks = [
@@ -6,6 +7,7 @@ const footerLinks = [
   { label: "Accelerators", href: "/#products" },
   { label: "Services", href: "/#services" },
   { label: "Process", href: "/#process" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const Footer = () => (
@@ -29,16 +31,23 @@ const Footer = () => (
             Navigation
           </p>
           <ul className="space-y-3">
-            {footerLinks.map(({ label, href }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  className="text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
+            {footerLinks.map(({ label, href }) => {
+              const className =
+                "text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text";
+              return (
+                <li key={label}>
+                  {href.startsWith("/") && !href.includes("#") ? (
+                    <Link to={href} className={className}>
+                      {label}
+                    </Link>
+                  ) : (
+                    <a href={href} className={className}>
+                      {label}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -79,12 +88,12 @@ const Footer = () => (
           © {new Date().getFullYear()} Polemos Labs. All rights reserved.
         </p>
         <div className="flex gap-6">
-          <a href="/privacy" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+          <Link to="/privacy" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
             Privacy
-          </a>
-          <a href="/terms" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+          </Link>
+          <Link to="/terms" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
             Terms
-          </a>
+          </Link>
         </div>
       </div>
     </div>

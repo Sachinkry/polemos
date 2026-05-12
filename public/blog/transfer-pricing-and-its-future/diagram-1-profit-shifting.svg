@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="680" fill="#F4EFE5"/>
+
+  <text x="600" y="70" text-anchor="middle" font-size="32" font-weight="700" fill="#2A2A2A">Profit shifting under different transfer prices</text>
+  <text x="600" y="110" text-anchor="middle" font-size="17" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">A $10 change in the intercompany price moves $2 of tax across the border.</text>
+
+  <!-- Panel 1: Arm's length -->
+  <g>
+    <rect x="80" y="160" width="480" height="440" rx="14" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <text x="320" y="200" text-anchor="middle" font-size="20" font-weight="700" fill="#1F3A5F">Arm's-length price ($70)</text>
+
+    <!-- Bars baseline -->
+    <line x1="120" y1="500" x2="520" y2="500" stroke="#2A2A2A" stroke-width="1.5"/>
+
+    <!-- Bar A: $6 → 200px -->
+    <rect x="180" y="300" width="100" height="200" fill="#1F3A5F"/>
+    <text x="230" y="290" text-anchor="middle" font-size="22" font-weight="700" fill="#2A2A2A">$6</text>
+    <text x="230" y="525" text-anchor="middle" font-size="14" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Entity A · 30% rate</text>
+
+    <!-- Bar B: $2 → 67px -->
+    <rect x="360" y="433" width="100" height="67" fill="#1F3A5F"/>
+    <text x="410" y="423" text-anchor="middle" font-size="22" font-weight="700" fill="#2A2A2A">$2</text>
+    <text x="410" y="525" text-anchor="middle" font-size="14" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Entity B · 10% rate</text>
+
+    <!-- Total -->
+    <line x1="160" y1="555" x2="480" y2="555" stroke="#1F3A5F" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+    <text x="320" y="582" text-anchor="middle" font-size="14" font-family="Inter, system-ui, sans-serif" fill="#6B6B6B">Group tax</text>
+    <text x="320" y="608" text-anchor="middle" font-size="28" font-weight="700" fill="#1F3A5F">$8</text>
+  </g>
+
+  <!-- Arrow between panels -->
+  <g>
+    <line x1="586" y1="380" x2="614" y2="380" stroke="#C75D2C" stroke-width="3"/>
+    <polygon points="614,380 604,374 604,386" fill="#C75D2C"/>
+  </g>
+
+  <!-- Panel 2: Shifted -->
+  <g>
+    <rect x="640" y="160" width="480" height="440" rx="14" fill="#FFFFFF" stroke="#C75D2C" stroke-width="2"/>
+    <text x="880" y="200" text-anchor="middle" font-size="20" font-weight="700" fill="#C75D2C">Shifted price ($60)</text>
+
+    <line x1="680" y1="500" x2="1080" y2="500" stroke="#2A2A2A" stroke-width="1.5"/>
+
+    <!-- Bar A: $3 → 100px -->
+    <rect x="740" y="400" width="100" height="100" fill="#C75D2C"/>
+    <text x="790" y="390" text-anchor="middle" font-size="22" font-weight="700" fill="#2A2A2A">$3</text>
+    <text x="790" y="525" text-anchor="middle" font-size="14" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Entity A · 30% rate</text>
+
+    <!-- Bar B: $3 → 100px -->
+    <rect x="920" y="400" width="100" height="100" fill="#C75D2C"/>
+    <text x="970" y="390" text-anchor="middle" font-size="22" font-weight="700" fill="#2A2A2A">$3</text>
+    <text x="970" y="525" text-anchor="middle" font-size="14" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">Entity B · 10% rate</text>
+
+    <line x1="720" y1="555" x2="1040" y2="555" stroke="#C75D2C" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+    <text x="880" y="582" text-anchor="middle" font-size="14" font-family="Inter, system-ui, sans-serif" fill="#6B6B6B">Group tax</text>
+    <text x="880" y="608" text-anchor="middle" font-size="28" font-weight="700" fill="#C75D2C">$6 <tspan font-size="16" fill="#6B6B6B" font-family="Inter, system-ui, sans-serif">  (−$2)</tspan></text>
+  </g>
+</svg>

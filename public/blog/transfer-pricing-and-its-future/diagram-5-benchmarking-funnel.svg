@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="780" fill="#F4EFE5"/>
+
+  <text x="600" y="60" text-anchor="middle" font-size="30" font-weight="700" fill="#2A2A2A">Comparables search as a retrieval funnel</text>
+  <text x="600" y="98" text-anchor="middle" font-size="16" font-family="Inter, system-ui, sans-serif" fill="#6B6B6B">10,000 companies down to a defensible set of 15. The judgment heavy work happens at the bottom.</text>
+
+  <g font-family="Inter, system-ui, sans-serif">
+    <!-- Stage 1 -->
+    <rect x="80" y="150" width="1040" height="74" rx="10" fill="#1F3A5F"/>
+    <text x="110" y="180" font-size="12" letter-spacing="1.6" fill="#F4EFE5" font-weight="700">STAGE 01 · DETERMINISTIC</text>
+    <text x="110" y="208" font-size="20" font-weight="700" fill="#F4EFE5" font-family="Georgia, serif">Industry codes, region, size band</text>
+    <text x="1090" y="195" text-anchor="end" font-size="22" font-weight="700" fill="#F4EFE5">10,000</text>
+
+    <!-- Stage 2 -->
+    <rect x="160" y="244" width="880" height="74" rx="10" fill="#1F3A5F" opacity="0.88"/>
+    <text x="190" y="274" font-size="12" letter-spacing="1.6" fill="#F4EFE5" font-weight="700">STAGE 02 · DETERMINISTIC</text>
+    <text x="190" y="302" font-size="20" font-weight="700" fill="#F4EFE5" font-family="Georgia, serif">Financial thresholds, independence test</text>
+    <text x="1010" y="289" text-anchor="end" font-size="22" font-weight="700" fill="#F4EFE5">800</text>
+
+    <!-- Stage 3 -->
+    <rect x="240" y="338" width="720" height="74" rx="10" fill="#C75D2C" opacity="0.85"/>
+    <text x="270" y="368" font-size="12" letter-spacing="1.6" fill="#F4EFE5" font-weight="700">STAGE 03 · AI-ASSISTED</text>
+    <text x="270" y="396" font-size="20" font-weight="700" fill="#F4EFE5" font-family="Georgia, serif">Semantic similarity (BM25 + dense)</text>
+    <text x="930" y="383" text-anchor="end" font-size="22" font-weight="700" fill="#F4EFE5">250</text>
+
+    <!-- Stage 4 -->
+    <rect x="320" y="432" width="560" height="74" rx="10" fill="#C75D2C"/>
+    <text x="350" y="462" font-size="12" letter-spacing="1.6" fill="#F4EFE5" font-weight="700">STAGE 04 · LLM-AS-JUDGE</text>
+    <text x="350" y="490" font-size="20" font-weight="700" fill="#F4EFE5" font-family="Georgia, serif">OECD comparability factors</text>
+    <text x="850" y="477" text-anchor="end" font-size="22" font-weight="700" fill="#F4EFE5">60</text>
+
+    <!-- Stage 5 -->
+    <rect x="400" y="526" width="400" height="74" rx="10" fill="#1F3A5F"/>
+    <text x="430" y="556" font-size="12" letter-spacing="1.6" fill="#F4EFE5" font-weight="700">STAGE 05 · ANALYST SIGN-OFF</text>
+    <text x="430" y="584" font-size="20" font-weight="700" fill="#F4EFE5" font-family="Georgia, serif">Final defensible set</text>
+    <text x="770" y="571" text-anchor="end" font-size="22" font-weight="700" fill="#C75D2C">15</text>
+
+    <!-- Footnote -->
+    <text x="600" y="670" text-anchor="middle" font-size="14" fill="#6B6B6B" font-style="italic">
+      Every rejection at stages 3 to 5 carries a written rationale.
+    </text>
+    <text x="600" y="694" text-anchor="middle" font-size="14" fill="#6B6B6B" font-style="italic">
+      That is the artefact a tax authority audits.
+    </text>
+  </g>
+</svg>

@@ -2,7 +2,9 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/privacy", "destination": "/index.html" },
-    { "source": "/terms", "destination": "/index.html" }
+    { "source": "/terms", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/blog/:slug", "destination": "/index.html" }
   ],
   "headers": [
     {

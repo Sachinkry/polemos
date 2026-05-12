@@ -1,5 +1,6 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { ArrowRight, ChevronDown, Mail, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import SectionLabel from "./SectionLabel";
 import XLogo from "./XLogo";
@@ -137,15 +138,19 @@ const PolemosLanding = () => {
           </a>
 
           <div className="hidden items-center justify-center gap-8 lg:flex">
-            {navLinks.map(({ label, href }) => (
-              <a
-                key={label}
-                href={href}
-                className="text-[0.78rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-warm-text"
-              >
-                {label}
-              </a>
-            ))}
+            {navLinks.map(({ label, href }) => {
+              const className =
+                "text-[0.78rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-warm-text";
+              return href.startsWith("/") ? (
+                <Link key={label} to={href} className={className}>
+                  {label}
+                </Link>
+              ) : (
+                <a key={label} href={href} className={className}>
+                  {label}
+                </a>
+              );
+            })}
           </div>
           <span className="lg:hidden" aria-hidden="true" />
 
@@ -174,16 +179,19 @@ const PolemosLanding = () => {
         <div className="fixed inset-x-4 top-[88px] z-40 rounded-3xl border border-white/10 bg-surface/80 px-5 py-5 shadow-[0_18px_50px_rgba(0,0,0,0.45)] backdrop-blur-2xl backdrop-saturate-150 md:inset-x-8 md:top-[96px] lg:hidden">
           <div className="flex flex-col gap-4">
             {[...navLinks, { label: "Start the conversation", href: "#contact" }].map(
-              ({ label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-sm uppercase tracking-[0.12em] text-gold"
-                >
-                  {label}
-                </a>
-              ),
+              ({ label, href }) => {
+                const className = "text-sm uppercase tracking-[0.12em] text-gold";
+                const onClick = () => setMenuOpen(false);
+                return href.startsWith("/") ? (
+                  <Link key={label} to={href} onClick={onClick} className={className}>
+                    {label}
+                  </Link>
+                ) : (
+                  <a key={label} href={href} onClick={onClick} className={className}>
+                    {label}
+                  </a>
+                );
+              },
             )}
           </div>
         </div>
