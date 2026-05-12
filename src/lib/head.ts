@@ -11,10 +11,18 @@ type HeadConfig = {
   twitterImage?: string;
 };
 
-const setMeta = (selector: string, attr: "content", value: string | undefined) => {
-  const el = document.querySelector(selector);
-  if (!el || value === undefined) return;
-  el.setAttribute(attr, value);
+type MetaKey = { name: string } | { property: string };
+
+const ensureMeta = (key: MetaKey, value: string | undefined) => {
+  if (value === undefined) return;
+  const [attr, name] = "name" in key ? ["name", key.name] : ["property", key.property];
+  let el = document.querySelector(`meta[${attr}="${name}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", value);
 };
 
 const setLink = (rel: string, href: string | undefined) => {
@@ -30,16 +38,16 @@ const setLink = (rel: string, href: string | undefined) => {
 
 export const applyHead = (cfg: HeadConfig) => {
   if (cfg.title) document.title = cfg.title;
-  setMeta('meta[name="description"]', "content", cfg.description);
+  ensureMeta({ name: "description" }, cfg.description);
   setLink("canonical", cfg.canonical);
-  setMeta('meta[property="og:title"]', "content", cfg.ogTitle ?? cfg.title);
-  setMeta('meta[property="og:description"]', "content", cfg.ogDescription ?? cfg.description);
-  setMeta('meta[property="og:image"]', "content", cfg.ogImage);
-  setMeta('meta[property="og:url"]', "content", cfg.canonical);
-  setMeta('meta[property="og:type"]', "content", cfg.ogType ?? "website");
-  setMeta('meta[name="twitter:title"]', "content", cfg.twitterTitle ?? cfg.title);
-  setMeta('meta[name="twitter:description"]', "content", cfg.twitterDescription ?? cfg.description);
-  setMeta('meta[name="twitter:image"]', "content", cfg.twitterImage ?? cfg.ogImage);
+  ensureMeta({ property: "og:title" }, cfg.ogTitle ?? cfg.title);
+  ensureMeta({ property: "og:description" }, cfg.ogDescription ?? cfg.description);
+  ensureMeta({ property: "og:image" }, cfg.ogImage);
+  ensureMeta({ property: "og:url" }, cfg.canonical);
+  ensureMeta({ property: "og:type" }, cfg.ogType ?? "website");
+  ensureMeta({ name: "twitter:title" }, cfg.twitterTitle ?? cfg.title);
+  ensureMeta({ name: "twitter:description" }, cfg.twitterDescription ?? cfg.description);
+  ensureMeta({ name: "twitter:image" }, cfg.twitterImage ?? cfg.ogImage);
 };
 
 const HOME_DEFAULTS: HeadConfig = {

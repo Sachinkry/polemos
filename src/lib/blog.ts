@@ -77,7 +77,7 @@ const buildPosts = (): Post[] => {
       readingMinutes: Math.max(1, Math.round(wordCount(body) / 220)),
     });
   }
-  return posts.sort((a, b) => (a.date < b.date ? 1 : -1));
+  return posts.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
 };
 
 export const posts = buildPosts();
