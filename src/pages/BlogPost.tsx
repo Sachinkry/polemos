@@ -69,7 +69,7 @@ const BlogPost = () => {
           {post.hero && (
             <img
               src={post.hero}
-              alt=""
+              alt={post.title}
               className="mt-8 w-full rounded-lg border border-white/7 md:mt-10"
               loading="eager"
             />

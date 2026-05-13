@@ -8,7 +8,7 @@ export type SeoConfig = {
   canonical: string;
   ogImage: string;
   ogType: "website" | "article";
-  jsonLd?: object;
+  jsonLd?: object | object[];
   // ISO date — only set for blog posts; used by sitemap and meta
   publishedTime?: string;
 };
@@ -19,6 +19,35 @@ const absUrl = (path?: string) => {
   return `${SITE_ORIGIN}${path.startsWith("/") ? path : `/${path}`}`;
 };
 
+// Google's structured data spec wants ISO 8601 datetime with timezone.
+// Post frontmatter only specifies a date — anchor it to 09:00 UTC so we
+// emit a valid, deterministic datetime ("2026-02-20T09:00:00+00:00").
+const toIsoDateTime = (date: string): string => {
+  if (/T\d{2}:\d{2}/.test(date)) return date;
+  return `${date}T09:00:00+00:00`;
+};
+
+const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Polemos Labs",
+  alternateName: ["Polemos", "Polemos Labs Studio"],
+  url: `${SITE_ORIGIN}/`,
+  logo: `${SITE_ORIGIN}/polemos-logo-nav.svg`,
+  image: `${SITE_ORIGIN}/og-image.png`,
+  description:
+    "Applied AI studio building governed, production-grade AI systems — retrieval, agentic workflows, and private model deployments — for finance, logistics, and professional services teams.",
+  email: "hello@polemos.in",
+  sameAs: ["https://twitter.com/polemos_labs", "https://x.com/polemos_labs"],
+};
+
+const WEBSITE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Polemos Labs",
+  url: `${SITE_ORIGIN}/`,
+};
+
 const HOME: SeoConfig = {
   title: "Polemos Labs — AI Systems for Enterprise Operations",
   description:
@@ -26,6 +55,7 @@ const HOME: SeoConfig = {
   canonical: `${SITE_ORIGIN}/`,
   ogImage: `${SITE_ORIGIN}/og-image.png`,
   ogType: "website",
+  jsonLd: [ORGANIZATION_SCHEMA, WEBSITE_SCHEMA],
 };
 
 const BLOG_INDEX: SeoConfig = {
@@ -35,20 +65,31 @@ const BLOG_INDEX: SeoConfig = {
   canonical: `${SITE_ORIGIN}/blog`,
   ogImage: `${SITE_ORIGIN}/og-image.png`,
   ogType: "website",
-  jsonLd: {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    name: "Polemos Labs Blog",
-    url: `${SITE_ORIGIN}/blog`,
-    blogPost: posts.map((p) => ({
-      "@type": "BlogPosting",
-      headline: p.title,
-      url: `${SITE_ORIGIN}/blog/${p.slug}`,
-      datePublished: p.date,
-      author: { "@type": "Person", name: p.author },
-      description: p.description,
-    })),
-  },
+  jsonLd: [
+    ORGANIZATION_SCHEMA,
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "Polemos Labs Blog",
+      url: `${SITE_ORIGIN}/blog`,
+      blogPost: posts.map((p) => ({
+        "@type": "BlogPosting",
+        headline: p.title,
+        url: `${SITE_ORIGIN}/blog/${p.slug}`,
+        datePublished: toIsoDateTime(p.date),
+        author: { "@type": "Person", name: p.author },
+        description: p.description,
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_ORIGIN}/blog` },
+      ],
+    },
+  ],
 };
 
 const PRIVACY: SeoConfig = {
@@ -57,6 +98,7 @@ const PRIVACY: SeoConfig = {
   canonical: `${SITE_ORIGIN}/privacy`,
   ogImage: `${SITE_ORIGIN}/og-image.png`,
   ogType: "website",
+  jsonLd: [ORGANIZATION_SCHEMA],
 };
 
 const TERMS: SeoConfig = {
@@ -65,6 +107,7 @@ const TERMS: SeoConfig = {
   canonical: `${SITE_ORIGIN}/terms`,
   ogImage: `${SITE_ORIGIN}/og-image.png`,
   ogType: "website",
+  jsonLd: [ORGANIZATION_SCHEMA],
 };
 
 const buildPostConfig = (slug: string): SeoConfig | undefined => {
@@ -72,30 +115,43 @@ const buildPostConfig = (slug: string): SeoConfig | undefined => {
   if (!post) return undefined;
   const url = `${SITE_ORIGIN}/blog/${post.slug}`;
   const ogImage = absUrl(post.hero);
+  const published = toIsoDateTime(post.date);
   return {
     title: `${post.title} · Polemos Labs`,
     description: post.description,
     canonical: url,
     ogImage,
     ogType: "article",
-    publishedTime: post.date,
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: post.title,
-      description: post.description,
-      author: { "@type": "Person", name: post.author },
-      publisher: {
-        "@type": "Organization",
-        name: "Polemos Labs",
-        logo: { "@type": "ImageObject", url: `${SITE_ORIGIN}/polemos-logo-nav.svg` },
+    publishedTime: published,
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        author: { "@type": "Person", name: post.author },
+        publisher: {
+          "@type": "Organization",
+          name: "Polemos Labs",
+          logo: { "@type": "ImageObject", url: `${SITE_ORIGIN}/polemos-logo-nav.svg` },
+        },
+        datePublished: published,
+        dateModified: published,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        image: ogImage,
+        keywords: (post.tags || []).join(", "),
       },
-      datePublished: post.date,
-      dateModified: post.date,
-      mainEntityOfPage: { "@type": "WebPage", "@id": url },
-      image: ogImage,
-      keywords: (post.tags || []).join(", "),
-    },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_ORIGIN}/blog` },
+          { "@type": "ListItem", position: 3, name: post.title, item: url },
+        ],
+      },
+      ORGANIZATION_SCHEMA,
+    ],
   };
 };
 

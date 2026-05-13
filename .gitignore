@@ -37,3 +37,6 @@ outreach/
 
 # Claude Code project config + skills (private tooling, do not commit)
 .claude/
+
+# Local SEO working notes (private, do not commit)
+SEO.md
