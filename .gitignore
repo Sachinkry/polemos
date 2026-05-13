@@ -34,3 +34,6 @@ repomix-output.xml
 
 # Local outreach lists (private, do not commit)
 outreach/
+
+# Claude Code project config + skills (private tooling, do not commit)
+.claude/
