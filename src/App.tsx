@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 import Index from "./pages";
 import Privacy from "./pages/Privacy";
@@ -7,8 +8,18 @@ import Terms from "./pages/Terms";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) return;
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+};
+
 const App = () => (
   <>
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/privacy" element={<Privacy />} />
