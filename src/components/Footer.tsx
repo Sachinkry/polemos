@@ -94,6 +94,9 @@ const Footer = () => (
           <Link to="/terms" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
             Terms
           </Link>
+          <a href="/ai" className="font-mono text-[0.6rem] uppercase tracking-[0.12em] text-warm-muted transition-colors hover:text-gold">
+            AI
+          </a>
         </div>
       </div>
     </div>
