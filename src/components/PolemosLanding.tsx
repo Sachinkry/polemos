@@ -589,12 +589,12 @@ const PolemosLanding = () => {
                         Social
                       </p>
                       <a
-                        href="https://x.com/polemos_labs"
+                        href="https://x.com/polemosLabs"
                         target="_blank"
                         rel="noreferrer"
                         className="mt-1 block text-[0.88rem] text-warm-text transition-colors hover:text-gold"
                       >
-                        @polemos_labs
+                        @polemosLabs
                       </a>
                     </div>
                   </div>

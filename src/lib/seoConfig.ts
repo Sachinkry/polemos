@@ -38,7 +38,7 @@ const ORGANIZATION_SCHEMA = {
   description:
     "Applied AI studio building governed, production-grade AI systems — retrieval, agentic workflows, and private model deployments — for finance, logistics, and professional services teams.",
   email: "hello@polemos.in",
-  sameAs: ["https://twitter.com/polemos_labs", "https://x.com/polemos_labs"],
+  sameAs: ["https://twitter.com/polemosLabs", "https://x.com/polemosLabs"],
 };
 
 const WEBSITE_SCHEMA = {
