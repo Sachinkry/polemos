@@ -68,13 +68,13 @@ const Footer = () => (
             </li>
             <li>
               <a
-                href="https://x.com/polemos_labs"
+                href="https://x.com/polemosLabs"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-[0.82rem] text-warm-muted transition-colors hover:text-warm-text"
               >
                 <XLogo className="h-3.5 w-3.5 text-gold" />
-                X / @polemos_labs
+                X / @polemosLabs
               </a>
             </li>
           </ul>

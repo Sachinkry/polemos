@@ -104,4 +104,4 @@ private model deployment, evaluation, and ongoing operation.
 ## Contact
 
 - **Email:** hello@polemos.in
-- **X / Twitter:** @polemos_labs
+- **X / Twitter:** @polemosLabs
