@@ -85,6 +85,7 @@ const STATIC_SITEMAP_ENTRIES = [
 
 const SITEMAP_META = {
   "/": { changefreq: "weekly", priority: "1.0" },
+  "/tp-pilot": { changefreq: "monthly", priority: "0.9" },
   "/blog": { changefreq: "weekly", priority: "0.8" },
   "/privacy": { changefreq: "yearly", priority: "0.3" },
   "/terms": { changefreq: "yearly", priority: "0.3" },

@@ -92,6 +92,43 @@ const BLOG_INDEX: SeoConfig = {
   ],
 };
 
+const PILOT: SeoConfig = {
+  title: "Free One-Week Transfer Pricing Pilot · Polemos Labs",
+  description:
+    "AI systems that draft Form 3CEB, ITAT/DRP memos, comparables benchmarking, and BEPS Action 13 documentation for transfer pricing teams. Run a free one-week pilot — no cost, no commitment.",
+  canonical: `${SITE_ORIGIN}/tp-pilot`,
+  ogImage: `${SITE_ORIGIN}/og-image.png`,
+  ogType: "website",
+  jsonLd: [
+    ORGANIZATION_SCHEMA,
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Transfer Pricing AI Pilot",
+      serviceType: "AI systems for transfer pricing workflows",
+      provider: { "@type": "Organization", name: "Polemos Labs", url: `${SITE_ORIGIN}/` },
+      areaServed: "IN",
+      description:
+        "A free one-week pilot in which Polemos Labs runs an AI system on one real transfer pricing task — Form 3CEB drafting, ITAT/DRP research and memos, comparables benchmarking, or BEPS Action 13 documentation — and delivers a cited, senior-review-ready first draft.",
+      url: `${SITE_ORIGIN}/tp-pilot`,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "INR",
+        description: "Free one-week pilot — no cost, no commitment.",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
+        { "@type": "ListItem", position: 2, name: "Pilot", item: `${SITE_ORIGIN}/tp-pilot` },
+      ],
+    },
+  ],
+};
+
 const PRIVACY: SeoConfig = {
   title: "Privacy · Polemos Labs",
   description: "Polemos Labs privacy policy.",
@@ -158,6 +195,7 @@ const buildPostConfig = (slug: string): SeoConfig | undefined => {
 export const getSeoConfig = (pathname: string): SeoConfig => {
   const path = pathname.replace(/\/+$/, "") || "/";
   if (path === "/") return HOME;
+  if (path === "/tp-pilot") return PILOT;
   if (path === "/blog") return BLOG_INDEX;
   if (path === "/privacy") return PRIVACY;
   if (path === "/terms") return TERMS;
@@ -171,6 +209,7 @@ export const getSeoConfig = (pathname: string): SeoConfig => {
 
 export const listPrerenderRoutes = (): string[] => [
   "/",
+  "/tp-pilot",
   "/blog",
   "/privacy",
   "/terms",
