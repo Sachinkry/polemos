@@ -112,14 +112,32 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Stop the rubber-band overscroll from revealing the root background
-       above/below the page on touchpads and mobile. */
-    overscroll-behavior: none;
+    /* Keep the rubber-band overscroll painted with the route-level <html> background. */
   }
 
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+  }
+
+  html.polemos-landing-page {
+    background-image:
+      radial-gradient(70vw 70vw at 0% 0%, rgba(255, 220, 170, 0.22) 0%, rgba(232, 180, 130, 0.08) 42%, transparent 70%),
+      radial-gradient(64vw 64vw at 100% 0%, rgba(120, 130, 200, 0.18) 0%, rgba(80, 90, 160, 0.07) 42%, transparent 70%),
+      radial-gradient(72vw 72vw at 0% 100%, rgba(220, 130, 90, 0.18) 0%, rgba(160, 80, 60, 0.06) 45%, transparent 72%),
+      radial-gradient(64vw 64vw at 100% 100%, rgba(80, 160, 170, 0.15) 0%, rgba(50, 110, 130, 0.05) 44%, transparent 70%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  /* Put page glows on <html> so the rubber-band gutter is painted too. */
+  html.tp-pilot-page {
+    background-image:
+      radial-gradient(120% 90% at 0% 0%, rgba(232, 217, 199, 0.16) 0%, transparent 55%),
+      radial-gradient(90% 80% at 100% 6%, rgba(160, 120, 80, 0.14) 0%, transparent 55%),
+      radial-gradient(100% 80% at 50% 100%, rgba(232, 217, 199, 0.08) 0%, transparent 58%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
   ::placeholder {

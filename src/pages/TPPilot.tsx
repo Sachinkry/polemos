@@ -75,10 +75,12 @@ const TPPilot = () => {
       ogImage: "https://polemos.in/og-image.png",
       ogType: "website",
     });
+    document.documentElement.classList.add("tp-pilot-page");
+    return () => document.documentElement.classList.remove("tp-pilot-page");
   }, []);
 
   return (
-    <main className="polemos-page relative min-h-screen overflow-hidden bg-canvas px-0 py-0 text-warm-text md:px-6 md:py-16">
+    <main className="polemos-page relative overflow-hidden bg-canvas px-0 py-0 text-warm-text md:px-6 md:py-16">
       <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden md:block" />
       <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden md:block" />
 
@@ -88,6 +90,7 @@ const TPPilot = () => {
         <div className="polemos-aurora-blob b3" />
         <div className="polemos-aurora-blob b5" />
       </div>
+      <div className="polemos-vignette" aria-hidden="true" />
       <div className="polemos-noise pointer-events-none absolute inset-0" aria-hidden="true" />
 
       {/* Mobile: card gradient spans the whole page */}
@@ -96,7 +99,7 @@ const TPPilot = () => {
         className="pointer-events-none absolute inset-0 md:hidden"
         style={{
           background:
-            "radial-gradient(120% 90% at 0% 0%, rgba(232,217,199,0.16) 0%, transparent 55%), radial-gradient(90% 80% at 100% 6%, rgba(160,120,80,0.14) 0%, transparent 55%), linear-gradient(180deg, rgba(34,30,38,0.94) 0%, rgba(20,18,24,0.96) 100%)",
+            "radial-gradient(120% 90% at 0% 0%, rgba(232,217,199,0.16) 0%, transparent 55%), radial-gradient(90% 80% at 100% 6%, rgba(160,120,80,0.14) 0%, transparent 55%)",
         }}
       />
 

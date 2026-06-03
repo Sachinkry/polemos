@@ -110,6 +110,11 @@ const PolemosLanding = () => {
     }
   };
 
+  useEffect(() => {
+    document.documentElement.classList.add("polemos-landing-page");
+    return () => document.documentElement.classList.remove("polemos-landing-page");
+  }, []);
+
   // Close mobile menu on hash navigation
   useEffect(() => {
     const close = () => setMenuOpen(false);
