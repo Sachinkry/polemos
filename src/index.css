@@ -112,6 +112,9 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Stop the rubber-band overscroll from revealing the root background
+       above/below the page on touchpads and mobile. */
+    overscroll-behavior: none;
   }
 
   html {

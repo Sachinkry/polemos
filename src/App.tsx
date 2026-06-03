@@ -7,6 +7,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import TPPilot from "./pages/TPPilot";
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
@@ -24,6 +25,7 @@ const App = () => (
       <Route path="/" element={<Index />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/tp-pilot" element={<TPPilot />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="*" element={<NotFound />} />
