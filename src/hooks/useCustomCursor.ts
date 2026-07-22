@@ -5,7 +5,8 @@ export function useCustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!window.matchMedia("(pointer: fine)").matches) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine) and (min-width: 1024px)").matches)
+      return;
 
     const cursor = cursorRef.current;
     const ring = ringRef.current;

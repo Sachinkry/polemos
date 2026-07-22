@@ -125,11 +125,11 @@ const PolemosLanding = () => {
   return (
     <main className="polemos-page min-h-screen bg-canvas text-warm-text">
       {/* Custom cursor */}
-      <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden md:block" />
-      <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden md:block" />
+      <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden lg:block" />
+      <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden lg:block" />
 
       {/* ── NAV ── floating glass pill */}
-      <nav className="fixed inset-x-0 top-4 z-50 px-4 md:top-6 md:px-8">
+      <nav className="fixed inset-x-0 top-4 z-50 px-4 md:top-6 md:px-6 lg:px-8">
         <div className="mx-auto grid w-full max-w-[1120px] grid-cols-[auto_1fr_auto] uppercase items-center gap-4 rounded-full border border-white/15 bg-canvas/60 px-4 py-2.5 shadow-[0_24px_60px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(232,217,199,0.08),0_0_40px_-10px_rgba(232,217,199,0.25)] ring-1 ring-gold/15 backdrop-blur-2xl backdrop-saturate-150 md:px-5 md:py-3">
           <a
             href="#"
@@ -203,7 +203,7 @@ const PolemosLanding = () => {
       )}
 
       {/* ── HERO ── minimal, centered, ambient line trails */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-32 md:px-16">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-32 md:px-8 lg:px-16">
         {/* Aurora gradient mesh — drifting blobs blended via screen */}
         <div className="polemos-aurora" aria-hidden="true">
           <div className="polemos-aurora-blob b1" />
@@ -246,7 +246,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── PROBLEM ── */}
-      <section id="problem" className="bg-surface px-5 py-28 md:px-16">
+      <section id="problem" className="bg-surface px-5 py-28 md:px-8 lg:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>The problem</SectionLabel>
@@ -261,7 +261,7 @@ const PolemosLanding = () => {
             className="glass-tile polemos-reveal grid grid-cols-2 gap-px border border-white/10 bg-white/7 lg:grid-cols-4"
           >
             {problemStats.map(({ value, label }) => (
-              <div key={value} className="box-gradient-neutral p-8 md:p-10">
+              <div key={value} className="box-gradient-neutral p-7 sm:p-8 lg:p-10">
                 <div
                   className="font-display font-bold text-gold"
                   style={{ fontSize: "2.75rem", lineHeight: 1, letterSpacing: "-0.03em" }}
@@ -276,7 +276,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── OUTCOMES ── */}
-      <section id="outcomes" className="bg-canvas px-5 py-28 md:px-16">
+      <section id="outcomes" className="bg-canvas px-5 py-28 md:px-8 lg:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>What deployed looks like</SectionLabel>
@@ -293,7 +293,7 @@ const PolemosLanding = () => {
             {outcomes.map((outcome) => (
               <article
                 key={outcome.industry}
-                className="group relative overflow-hidden box-gradient-neutral p-8 transition-colors md:p-10"
+                className="group relative overflow-hidden box-gradient-neutral p-7 transition-colors sm:p-8 lg:p-10"
               >
                 <div className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gold transition-transform duration-500 group-hover:scale-x-100" />
                 <p className="t-eyebrow text-gold">{outcome.industry}</p>
@@ -309,7 +309,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── PRODUCTS ── */}
-      <section id="products" className="bg-surface px-5 py-28 md:px-16">
+      <section id="products" className="bg-surface px-5 py-28 md:px-8 lg:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Implementation accelerators</SectionLabel>
@@ -324,7 +324,7 @@ const PolemosLanding = () => {
             className="glass-tile polemos-reveal grid gap-px border border-white/10 bg-white/7 lg:grid-cols-2"
           >
             {products.map((product) => (
-              <article key={product.name} className="box-gradient-neutral p-8 md:p-10">
+              <article key={product.name} className="box-gradient-neutral p-7 sm:p-8 lg:p-10">
                 <span className="t-label inline-block rounded-full border border-gold/40 px-3 py-[0.3rem] text-gold">
                   {product.tag}
                 </span>
@@ -349,7 +349,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── SERVICES ── */}
-      <section id="services" className="bg-canvas px-5 py-28 md:px-16">
+      <section id="services" className="bg-canvas px-5 py-28 md:px-8 lg:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Core services</SectionLabel>
@@ -361,17 +361,17 @@ const PolemosLanding = () => {
 
           <div
             data-reveal
-            className="glass-tile polemos-reveal grid border border-white/10 md:grid-cols-2"
+            className="glass-tile polemos-reveal grid border border-white/10 lg:grid-cols-2"
           >
             {services.map((service, i) => (
               <article
                 key={service.title}
                 className={[
-                  "box-gradient-neutral p-8 transition-colors md:p-10",
+                  "box-gradient-neutral p-7 transition-colors sm:p-8 lg:p-10",
                   i < services.length - 2 || services.length % 2 !== 0
                     ? "border-b border-white/7"
                     : "",
-                  i % 2 === 0 ? "md:border-r md:border-white/7" : "",
+                  i % 2 === 0 ? "lg:border-r lg:border-white/7" : "",
                 ].join(" ")}
               >
                 <p className="t-eyebrow text-gold">{service.problem}</p>
@@ -384,7 +384,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── PROCESS ── */}
-      <section id="process" className="bg-surface px-5 py-28 md:px-16">
+      <section id="process" className="bg-surface px-5 py-28 md:px-8 lg:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>How we work</SectionLabel>
@@ -399,7 +399,7 @@ const PolemosLanding = () => {
             className="glass-tile polemos-reveal grid gap-px border border-white/10 bg-white/7 md:grid-cols-2 xl:grid-cols-4"
           >
             {processSteps.map((step) => (
-              <article key={step.number} className="box-gradient-neutral p-8 md:p-10">
+              <article key={step.number} className="box-gradient-neutral p-7 sm:p-8 lg:p-10">
                 <p className="t-eyebrow text-gold">{step.number}</p>
                 <h3 className="t-h3 mt-5 text-warm-text">{step.title}</h3>
                 <p className="t-label mt-2 text-warm-muted">{step.duration}</p>
@@ -411,7 +411,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── WHO WE WORK WITH ── */}
-      <section className="border-y border-white/7 bg-canvas px-5 py-28 md:px-16">
+      <section className="border-y border-white/7 bg-canvas px-5 py-28 md:px-8 lg:px-16">
         <div className={SHELL_CLASS}>
           <div data-reveal className="polemos-reveal mb-12 text-center">
             <SectionLabel>Who we work with</SectionLabel>
@@ -444,7 +444,7 @@ const PolemosLanding = () => {
       </section>
 
       {/* ── CTA / CONTACT ── */}
-      <section id="contact" className="relative overflow-hidden bg-surface px-5 py-28 md:px-16">
+      <section id="contact" className="relative overflow-hidden bg-surface px-5 py-28 md:px-8 lg:px-16">
         <div className="polemos-cta-glow pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className={`relative z-10 ${SHELL_CLASS}`}>
 
@@ -463,7 +463,7 @@ const PolemosLanding = () => {
             className="glass-tile polemos-reveal grid gap-px border border-white/10 bg-white/7 lg:grid-cols-[1.3fr_1fr]"
           >
             {/* Left — Form */}
-            <div className="box-gradient-neutral p-10 md:p-12">
+            <div className="box-gradient-neutral p-7 sm:p-8 lg:p-12">
               <form className="flex flex-col gap-5" onSubmit={handleContactSubmit}>
                 <input
                   type="text"
@@ -563,7 +563,7 @@ const PolemosLanding = () => {
             </div>
 
             {/* Right — Contact info + proof card */}
-            <div className="flex flex-col justify-between gap-12 bg-canvas p-10 md:p-12">
+            <div className="flex flex-col justify-between gap-10 bg-canvas p-7 sm:p-8 lg:gap-12 lg:p-12">
               <div>
                 <p className="mb-8 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-warm-muted">
                   Contact

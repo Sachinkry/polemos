@@ -237,7 +237,7 @@
   }
 }
 
-@media (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
   .polemos-page,
   .polemos-page * {
     cursor: none;
@@ -366,6 +366,28 @@
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
     0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .t-display {
+    font-size: clamp(4.25rem, 10vw, 6.1rem);
+    line-height: 0.94;
+  }
+
+  .t-h2 {
+    font-size: clamp(2.25rem, 5.8vw, 3.2rem);
+  }
+
+  .glass-tile {
+    border-radius: 1.25rem;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 18px 44px rgba(0, 0, 0, 0.28);
+  }
+
+  .polemos-aurora {
+    filter: blur(30px) saturate(145%);
+  }
 }
 
 .polemos-command-panel {

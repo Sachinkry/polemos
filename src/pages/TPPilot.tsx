@@ -81,8 +81,8 @@ const TPPilot = () => {
 
   return (
     <main className="polemos-page relative overflow-hidden bg-canvas px-0 py-0 text-warm-text md:px-6 md:py-16">
-      <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden md:block" />
-      <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden md:block" />
+      <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden lg:block" />
+      <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden lg:block" />
 
       {/* Ambient background */}
       <div className="polemos-aurora" aria-hidden="true">

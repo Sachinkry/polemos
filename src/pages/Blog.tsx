@@ -59,8 +59,8 @@ const Blog = () => {
 
   return (
     <main className="polemos-page min-h-screen bg-canvas text-warm-text">
-      <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden md:block" />
-      <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden md:block" />
+      <div ref={cursorRef} aria-hidden="true" className="polemos-cursor hidden lg:block" />
+      <div ref={ringRef} aria-hidden="true" className="polemos-cursor-ring hidden lg:block" />
 
       <section className="px-5 py-10 md:px-16">
         <div className="mx-auto flex w-full max-w-[1120px] items-center justify-between gap-6 border-b border-white/7 pb-8">
